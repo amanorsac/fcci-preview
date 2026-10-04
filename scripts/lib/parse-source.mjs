@@ -166,7 +166,7 @@ export function parseForms(rawHtml, slug) {
     // (e.g. "Add another person") that the redesign does not reproduce.
     const controls = $(form)
       .find('.sp-button, a, button, .sp-person-remove')
-      .map((_, b) => ($(b).attr('data-label') || $(b).text()).replace(/s+/g, ' ').trim())
+      .map((_, b) => ($(b).attr('data-label') || $(b).text()).replace(/\s+/g, ' ').trim())
       .get()
       .filter(Boolean);
     const submitLabel = controls.at(-1) || '';

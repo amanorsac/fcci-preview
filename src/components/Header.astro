@@ -33,7 +33,7 @@ const groupHasCurrent = (item: NavItem) => item.children?.some((c) => c.href ===
                 aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
             )}
             {item.children && (
-              <ul class="sub" id={`sub-${i}`} hidden>
+              <ul class="sub" id={`sub-${i}`} hidden data-disclosure>
                 {item.children.map((c) => (
                   <li><a href={c.href} aria-current={isCurrent(c.href) ? 'page' : undefined}>{c.label}</a></li>
                 ))}

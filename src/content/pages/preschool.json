@@ -53,10 +53,6 @@
       "kind": "form",
       "formId": "preschool-1",
       "text": ""
-    },
-    {
-      "kind": "p",
-      "text": "Contact Us"
     }
   ],
   "navChrome": [
@@ -329,7 +325,7 @@
           "required": false
         }
       ],
-      "submitLabel": "Contact U",
+      "submitLabel": "Contact Us",
       "successText": "Thank you for contacting us! We will respond shortly.",
       "subject": "Contact Request"
     }

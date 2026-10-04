@@ -176,3 +176,10 @@ it('links a title whose link label spans the title and the line below it', () =>
   const t = p.segments.find((s) => s.text === 'All for His Glory! - Part 7');
   expect(t.href).toBe('/media/cmtf8ws/all-for-his-glory-part-7');
 });
+
+it('keeps the exact submit label and leaves no stray button text (Contact Us)', () => {
+  const p = parseSourcePage(src('men'), raw('men'));
+  expect(p.forms[0].submitLabel).toBe('Contact Us');
+  const at = p.segments.findIndex((s) => s.kind === 'form');
+  expect(p.segments.slice(at + 1).map((s) => s.text)).not.toContain('Contact Us');
+});

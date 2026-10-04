@@ -2,7 +2,8 @@ import * as cheerio from 'cheerio';
 
 export const normalize = (s) => String(s).replace(/\s+/g, ' ').trim();
 
-const EXCLUDE = 'script, style, iframe, noscript, template, [aria-hidden="true"], .sr-only, [hidden]';
+// Disclosure content (menus that open on click) counts as visible text.
+const EXCLUDE = 'script, style, iframe, noscript, template, [aria-hidden="true"], .sr-only, [hidden]:not([data-disclosure])';
 
 /** Visible text nodes of a built page, in document order, whitespace-normalized. */
 export function extractBuiltSegments(html) {

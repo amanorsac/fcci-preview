@@ -57,10 +57,6 @@
       "kind": "form",
       "formId": "jesus-1",
       "text": ""
-    },
-    {
-      "kind": "p",
-      "text": "Contact Us"
     }
   ],
   "navChrome": [
@@ -329,7 +325,7 @@
           "required": true
         }
       ],
-      "submitLabel": "Contact U",
+      "submitLabel": "Contact Us",
       "successText": "Thank you for contacting us! We will respond shortly.",
       "subject": "Contact Request"
     }
