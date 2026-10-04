@@ -5,6 +5,7 @@ import { join, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseSourcePage } from './lib/parse-source.mjs';
 
+const SITE_ORIGIN = 'https://www.fcci.life';
 const group = (layout, slugs) => Object.fromEntries(slugs.map((s) => [s, layout]));
 
 // Spec §4: which layout renders each source page (keyed by file stem).
@@ -40,11 +41,30 @@ export function importAll({ srcDir, outDir, formsOut, chromeOut = join(outDir, '
   let count = 0;
   let homePage;
 
-  for (const file of readdirSync(pagesDir).filter((f) => f.endsWith('.md')).sort()) {
+  const parsed = readdirSync(pagesDir).filter((f) => f.endsWith('.md')).sort().map((file) => {
     const stem = basename(file, '.md');
     const rawPath = join(rawDir, `${stem}.html`);
     const raw = existsSync(rawPath) ? readFileSync(rawPath, 'utf8') : undefined;
-    const page = parseSourcePage(readFileSync(join(pagesDir, file), 'utf8'), raw);
+    return { stem, page: parseSourcePage(readFileSync(join(pagesDir, file), 'utf8'), raw) };
+  });
+
+  // Local links only for pages that exist in the preview; anything else on
+  // the old site (sermon library routes, broken links) points back to it.
+  const known = new Set(parsed.map(({ page }) => page.path));
+  const fixHref = (href) => {
+    if (!href || !href.startsWith('/')) return href;
+    const path = href.split('#')[0] || '/';
+    return known.has(path) ? href : SITE_ORIGIN + href;
+  };
+  const fixSeg = (seg) => (seg.href ? { ...seg, href: fixHref(seg.href) } : seg);
+
+  for (const { stem, page: rawPage } of parsed) {
+    const page = {
+      ...rawPage,
+      segments: rawPage.segments.map(fixSeg),
+      footerChrome: rawPage.footerChrome.map(fixSeg),
+      links: rawPage.links.map((l) => ({ ...l, href: fixHref(l.href) })),
+    };
     const layout = LAYOUT_BY_SLUG[stem];
     if (!layout) throw new Error(`No layout mapped for source page "${stem}"`);
 

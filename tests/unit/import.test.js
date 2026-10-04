@@ -33,3 +33,19 @@ describe('importAll', () => {
     expect(defs['prayer-request-1'].fields.length).toBeGreaterThan(3);
   });
 });
+
+describe('links outside the captured pages', () => {
+  const out = mkdtempSync(join(tmpdir(), 'fcci-import-ext-'));
+  importAll({ srcDir: 'source', outDir: out, formsOut: join(out, 'f.json'), chromeOut: join(out, 'c.json') });
+  const page = (s) => JSON.parse(readFileSync(join(out, `${s}.json`), 'utf8'));
+
+  it('point back to the live site', () => {
+    const seg = page('sermons').segments.find((s) => s.text === 'Built Different');
+    expect(seg.href).toBe('https://www.fcci.life/media/series/6n9ctk3/built-different');
+  });
+
+  it('keep captured pages local', () => {
+    const seg = page('home').segments.find((s) => s.text === 'Browse Sermons');
+    expect(seg.href).toBe('/sermons');
+  });
+});

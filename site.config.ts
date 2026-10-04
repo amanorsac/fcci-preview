@@ -72,8 +72,11 @@ export const site = {
   subsplash: {
     accountId: 'BPM5XF',
     giveEmbed: 'https://subsplash.com/u/-BPM5XF/give?embed=true',
+    liveEmbed: 'https://subsplash.com/u/-BPM5XF/media/embed/d/*next-live',
   },
   liveCalendarUrl: 'https://www.fcci.life/calendar',
+  // Pages whose content loads by script on the old site link out to it.
+  externalContent: { '/calendar': 'https://www.fcci.life/calendar' } as Record<string, string>,
   // Sections linking to these paths get the page's media embed.
   mediaLinkPaths: ['/sermons', '/media'],
   home: {

@@ -7,6 +7,14 @@ export function splitHero(segments: Segment[]) {
   const at = segments.findIndex(isHeading);
   if (at === -1) return { heading: '', eyebrow: [], body: segments };
   const before = segments.slice(0, at);
+  // A small h3 label directly above an h2 reads as eyebrow + title.
+  if (segments[at].kind === 'h3' && segments[at + 1]?.kind === 'h2') {
+    return {
+      heading: segments[at + 1].text,
+      eyebrow: [...before.filter((s) => s.kind === 'p' && !s.href).map((s) => s.text), segments[at].text],
+      body: [...before.filter((s) => s.kind !== 'p' || s.href), ...segments.slice(at + 2)],
+    };
+  }
   return {
     heading: segments[at].text,
     eyebrow: before.filter((s) => s.kind === 'p' && !s.href).map((s) => s.text),

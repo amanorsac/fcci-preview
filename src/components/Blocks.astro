@@ -10,6 +10,15 @@ const isExternal = (h?: string) => !!h && /^(https?:|mailto:|tel:|sms:)/.test(h)
 // Short linked lines read as calls to action; longer ones stay inline links.
 const isAction = (s: Segment) => !!s.href && s.kind === 'p' && s.text.length <= 48;
 const linkAttrs = (h?: string) => (h && /^https?:/.test(h) ? { rel: 'noopener', target: '_blank' } : {});
+// "text KEYWORD to 1-800-555-0100" becomes tappable; the wording is unchanged.
+const SMS = /(text ([A-Z0-9]{3,}) to ((?:1-)?\d{3}-\d{3}-\d{4}))/;
+const smsParts = (t: string) => {
+  const m = t.match(SMS);
+  if (!m) return null;
+  const at = t.indexOf(m[1]);
+  return { before: t.slice(0, at), link: m[1], after: t.slice(at + m[1].length),
+    href: `sms:+${m[3].replace(/\D/g, '').replace(/^(?!1)/, '1')}?body=${m[2]}` };
+};
 ---
 <div class="blocks prose">
   {segments.map((s) => {
@@ -17,11 +26,14 @@ const linkAttrs = (h?: string) => (h && /^https?:/.test(h) ? { rel: 'noopener', 
       const form = forms.find((f) => f.id === s.formId);
       return form ? <FormSlot form={form} pagePath={pagePath} /> : null;
     }
+    if (s.kind === 'h2' && s.text.length > 60) return <h2 class="h2-long">{s.text}</h2>;
     if (s.kind === 'h2') return <h2 class="display h2">{s.href ? <a href={s.href} {...linkAttrs(s.href)}>{s.text}</a> : s.text}</h2>;
     if (s.kind === 'h3') return <h3 class="h3">{s.href ? <a href={s.href} {...linkAttrs(s.href)}>{s.text}</a> : s.text}</h3>;
     if (s.kind === 'h1') return <h2 class="display h2">{s.text}</h2>;
     if (isAction(s)) return <p class="action"><a class="btn btn-primary" href={s.href} {...linkAttrs(s.href)}>{s.text}</a></p>;
     if (s.href) return <p><a href={s.href} {...linkAttrs(s.href)}>{s.text}</a></p>;
+    const sms = smsParts(s.text);
+    if (sms) return <p>{sms.before}<a href={sms.href}>{sms.link}</a>{sms.after}</p>;
     return <p>{s.text}</p>;
   })}
 </div>
@@ -30,6 +42,7 @@ const linkAttrs = (h?: string) => (h && /^https?:/.test(h) ? { rel: 'noopener', 
   .blocks { display: flow-root; }
   .blocks :global(.h2) { font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 1.6em 0 .35em; color: inherit; }
   .blocks :global(.h2:first-child) { margin-top: 0; }
+  .blocks :global(.h2-long) { font: 600 clamp(1.25rem, 2.4vw, 1.6rem)/1.45 var(--font-body); margin: 1.2em 0 .6em; }
   .blocks :global(.h3) {
     font: 700 1.05rem/1.35 var(--font-body); letter-spacing: .04em; text-transform: uppercase;
     margin: 1.8em 0 .5em; padding-left: 14px; border-left: 3px solid var(--accent);
