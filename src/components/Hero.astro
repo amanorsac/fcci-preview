@@ -28,7 +28,7 @@ const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = tr
   <div class="scrim" aria-hidden="true"></div>
   <div class="container hero-inner">
     {eyebrow.map((e) => <p class="eyebrow">{e}</p>)}
-    <h1 class="display">{heading}</h1>
+    <h1 class:list={["display", { long: heading.length > 60 }]}>{heading}</h1>
     {lead.map((l) => <p class="lead">{l}</p>)}
     <slot />
   </div>
@@ -51,6 +51,7 @@ const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = tr
   @media (max-width: 699px) { .scrim { background: linear-gradient(0deg, rgba(17,17,17,.92) 0%, rgba(17,17,17,.72) 60%, rgba(17,17,17,.6) 100%); } }
   .hero-inner { position: relative; padding-block: clamp(56px, 10vw, 120px) clamp(40px, 7vw, 88px); }
   .hero h1 { font-size: clamp(3rem, 9vw, 7.5rem); line-height: .92; max-width: 16ch; color: #fff; }
+  .hero h1.long { font-size: clamp(1.9rem, 3.8vw, 3rem); line-height: 1.08; max-width: 34ch; }
   .eyebrow { color: var(--accent); margin: 0 0 14px; }
   .lead { max-width: 56ch; margin: 18px 0 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: rgba(255,255,255,.88); }
 </style>
