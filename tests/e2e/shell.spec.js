@@ -9,7 +9,9 @@ for (const width of [375, 1280]) {
 
     test('header nav, CTAs, skip link and preview safety', async ({ page }) => {
       const requests = [];
-      page.on('request', (r) => requests.push(r.url()));
+      // Third-party embeds (Subsplash) may load their own analytics inside
+      // their iframe; only requests made by our own page count here.
+      page.on('request', (r) => { if (r.frame() === page.mainFrame()) requests.push(r.url()); });
       await page.goto('/');
       if (width < 900) await page.getByRole('button', { name: 'Menu' }).click();
       const nav = page.getByRole('navigation', { name: 'Main' });
