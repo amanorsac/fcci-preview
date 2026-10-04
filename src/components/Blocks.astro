@@ -1,0 +1,40 @@
+---
+// Renders verbatim content segments with semantic tags. Text is never altered.
+import FormSlot from './FormSlot.astro';
+
+interface Segment { kind: string; text: string; href?: string; formId?: string }
+interface Props { segments: Segment[]; forms?: any[]; pagePath?: string }
+const { segments, forms = [], pagePath = '/' } = Astro.props;
+
+const isExternal = (h?: string) => !!h && /^(https?:|mailto:|tel:|sms:)/.test(h);
+// Short linked lines read as calls to action; longer ones stay inline links.
+const isAction = (s: Segment) => !!s.href && s.kind === 'p' && s.text.length <= 48;
+const linkAttrs = (h?: string) => (h && /^https?:/.test(h) ? { rel: 'noopener', target: '_blank' } : {});
+---
+<div class="blocks prose">
+  {segments.map((s) => {
+    if (s.kind === 'form') {
+      const form = forms.find((f) => f.id === s.formId);
+      return form ? <FormSlot form={form} pagePath={pagePath} /> : null;
+    }
+    if (s.kind === 'h2') return <h2 class="display h2">{s.href ? <a href={s.href} {...linkAttrs(s.href)}>{s.text}</a> : s.text}</h2>;
+    if (s.kind === 'h3') return <h3 class="h3">{s.href ? <a href={s.href} {...linkAttrs(s.href)}>{s.text}</a> : s.text}</h3>;
+    if (s.kind === 'h1') return <h2 class="display h2">{s.text}</h2>;
+    if (isAction(s)) return <p class="action"><a class="btn btn-primary" href={s.href} {...linkAttrs(s.href)}>{s.text}</a></p>;
+    if (s.href) return <p><a href={s.href} {...linkAttrs(s.href)}>{s.text}</a></p>;
+    return <p>{s.text}</p>;
+  })}
+</div>
+
+<style>
+  .blocks { display: flow-root; }
+  .blocks :global(.h2) { font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 1.6em 0 .35em; color: inherit; }
+  .blocks :global(.h2:first-child) { margin-top: 0; }
+  .blocks :global(.h3) {
+    font: 700 1.05rem/1.35 var(--font-body); letter-spacing: .04em; text-transform: uppercase;
+    margin: 1.8em 0 .5em; padding-left: 14px; border-left: 3px solid var(--accent);
+  }
+  .blocks :global(p) { margin: 0 0 1em; }
+  .blocks :global(.action) { margin: 1.4em 0; }
+  .blocks :global(.h2 a), .blocks :global(.h3 a) { text-decoration: none; }
+</style>

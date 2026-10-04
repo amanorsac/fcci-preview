@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="404" currentPath="/404">
+  <section class="tone-dark nf"><div class="container"><h1 class="display">404</h1><p><a class="btn btn-primary" href="/">Home</a></p></div></section>
+</Base>
+<style>
+  .nf { min-height: 60vh; display: grid; align-items: center; padding-block: 80px; }
+  .nf h1 { font-size: clamp(5rem, 18vw, 12rem); color: var(--accent); }
+</style>

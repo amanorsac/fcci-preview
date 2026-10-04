@@ -1,0 +1,7 @@
+---
+// Placeholder position for a page's form. The forms task swaps this for the
+// real renderer; until then it reserves the spot without adding any text.
+interface Props { form: { id: string }; pagePath: string }
+const { form } = Astro.props;
+---
+<div class="form-slot" data-form-id={form.id}></div>
