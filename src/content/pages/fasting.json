@@ -1,0 +1,315 @@
+{
+  "url": "https://www.fcci.life/fasting",
+  "path": "/fasting",
+  "slug": "fasting",
+  "title": "Faith Christian Center International - fasting",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h2",
+      "text": "ALL FOR HIS GLORY!"
+    },
+    {
+      "kind": "p",
+      "text": "Matthew 5: 16 - “Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.”"
+    },
+    {
+      "kind": "p",
+      "text": "This season we invite our church family to a focused, purpose‑filled pursuit: 25 Days of Prayer & Fasting on August 6 - 30. This is not merely a discipline — it’s a movement of hearts determined to reflect Christ so that others see and honor the Father."
+    },
+    {
+      "kind": "p",
+      "text": "When we press into God with humility and expectancy, lives are changed, communities are stirred, and God is glorified. Matthew 5:16 calls us to live visibly for God — our devotion should produce deeds and transformation that point others to Him. This season is an opportunity to clear space for God to do a fresh work in us and through us."
+    },
+    {
+      "kind": "p",
+      "text": "Whether you’re seasoned in spiritual disciplines or new to prayer and fasting, this season is for you. Expect God to meet you where you are and to move mightily through our collective faith."
+    },
+    {
+      "kind": "p",
+      "text": "How to participate:"
+    },
+    {
+      "kind": "p",
+      "text": "- Commit: decide to pursue God personally and corporately for these 25 days."
+    },
+    {
+      "kind": "p",
+      "text": "- Connect: join others on this same journey for times of corporate worship."
+    },
+    {
+      "kind": "p",
+      "text": "- Engage: spend time meditating on Scripture and daily personal prayer."
+    },
+    {
+      "kind": "p",
+      "text": "- Invite: encourage friends, family members, or neighbors to do the same — let your light lead others to the Father."
+    },
+    {
+      "kind": "p",
+      "text": "This is a season of expectancy. When God’s people humble themselves and seek His face, God answers — often in ways greater than we imagined. Let us pursue Him not for our glory but for His, so that through transformed lives many will see and glorify our Father in heaven."
+    },
+    {
+      "kind": "p",
+      "text": "Join us. Let your light shine. It’s all for God’s glory."
+    },
+    {
+      "kind": "p",
+      "text": "Learn More",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "p",
+      "text": "Have questions about what to expect that you don’t see answered here? Email us at connect@fccintl.org or call 434-979-1700."
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Learn More",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/25271959_1920x1080_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/25271939_1333x2000_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/25271666_1500x1500_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/25444592_1500x1500_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/25444602_1500x1500_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [],
+  "forms": [],
+  "layout": "standard"
+}

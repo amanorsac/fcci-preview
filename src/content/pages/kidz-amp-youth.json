@@ -1,0 +1,298 @@
+{
+  "url": "https://www.fcci.life/kidz-amp-youth",
+  "path": "/kidz-amp-youth",
+  "slug": "kidz-amp-youth",
+  "title": "Faith Christian Center International - Kidz & Youth",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h2",
+      "text": "FAITH KIDZ!"
+    },
+    {
+      "kind": "p",
+      "text": "Sundays @ 10 AM"
+    },
+    {
+      "kind": "p",
+      "text": "FAITH KIDZ provides high energy activities with Bible based teaching for children birth through 5th grade specifically suited for their age level and interests. Each service, the Word of God comes alive through interactive scriptural lessons, games, puppetry and fun filled songs. FAITH KIDZ meets the needs of children spiritually, emotionally and socially while also showing them that living for God is the best thing they can do!"
+    },
+    {
+      "kind": "p",
+      "text": "FAITH KIDZ Nursery (Birth to 16 mos.)"
+    },
+    {
+      "kind": "p",
+      "text": "FAITH KIDZ Toddlers (17 mos. to 35 mos.)"
+    },
+    {
+      "kind": "p",
+      "text": "FAITH KIDZ Preschool (3 yrs. & potty trained to Kindergarten)"
+    },
+    {
+      "kind": "p",
+      "text": "FAITH KIDZ Church (1st grade to 5th grade)"
+    },
+    {
+      "kind": "h2",
+      "text": "Infusion Youth & G-One Teens"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesdays @ 7PM"
+    },
+    {
+      "kind": "p",
+      "text": "These Youth Groups are dedicated to partnering with parents to help teens develop as more devoted and mature disciples of Christ through an intentional focus on building spitually founded principles in the lives of our tweens and teens. Our youth group meets each Wednesday evening in the Youth Center for class at 7:00pm. Our space is devoted to the youth group and has game tables, a TV, an audio system, and hangout space. While our youth group has a number of regularly scheduled activities, our Children's & Youth Minister is committed to building better one-on-one relationships with tweens and teens through attending extracurricular activities and hanging out with them in their local contexts. We believe that this sort of relationship-building is the most important thing we do in achieving our mission to prepare and equip tweens and teens to live a successful life in Christ."
+    },
+    {
+      "kind": "p",
+      "text": "##"
+    },
+    {
+      "kind": "p",
+      "text": "College/Young Adult Ministry"
+    },
+    {
+      "kind": "p",
+      "text": "Meets Quarterly"
+    },
+    {
+      "kind": "p",
+      "text": "The College/Young Adult Ministry is a diverse group of millennials from all walks of life. College students, young professionals, singles and young married couples who gather for a time of fellowship quarterly to hangout, network and encourage each other to unashamedly live \"out loud\" for Christ!"
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/12298723_1631x794_1000.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/12298723_1631x794_2500.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [],
+  "forms": [],
+  "layout": "ministry"
+}

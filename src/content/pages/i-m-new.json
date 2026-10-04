@@ -1,0 +1,376 @@
+{
+  "url": "https://www.fcci.life/i-m-new",
+  "path": "/i-m-new",
+  "slug": "i-m-new",
+  "title": "Faith Christian Center International - I'm New",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h2",
+      "text": "WE CAN'T"
+    },
+    {
+      "kind": "p",
+      "text": "WAIT TO"
+    },
+    {
+      "kind": "p",
+      "text": "MEET YOU!"
+    },
+    {
+      "kind": "p",
+      "text": "We want to do anything we can to help remove any worry or stress you may have before you get here. Scroll below to see what you can expect upon arrival. If you have any questions, please contact us, and we’ll be glad to help you."
+    },
+    {
+      "kind": "p",
+      "text": "Person"
+    },
+    {
+      "kind": "p",
+      "text": "✕"
+    },
+    {
+      "kind": "p",
+      "text": "First Name"
+    },
+    {
+      "kind": "p",
+      "text": "Last Name"
+    },
+    {
+      "kind": "p",
+      "text": "Email"
+    },
+    {
+      "kind": "p",
+      "text": "Phone Number"
+    },
+    {
+      "kind": "p",
+      "text": "Add another person",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "p",
+      "text": "< Back",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "p",
+      "text": "Next >",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "p",
+      "text": "Submit",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "h2",
+      "text": "What are the services like?"
+    },
+    {
+      "kind": "p",
+      "text": "One of our values here at Faith Christian Center International is to create an atmosphere where you can experience God in a fresh and powerful way. We have two (2) worship experiences each week for your convenience. There is a 10 AM experience every Sunday morning lasting approximately 90 minutes which begins with our music team leading with songs – song lyrics will be projected so you can sing along and worship freely in a distraction-free environment. After the song portion and a few announcements, our pastor will share an encouraging, relevant, and life changing message that can be applied in our daily walk with God. In addition, there is a 7 PM mid week experience every Wednesday lasting approximately 60 minutes which is teaching only allowing the opportunity to dig deeper into various biblical topics. So, whether you choose one or both, you'll have an awesome experience!"
+    },
+    {
+      "kind": "h2",
+      "text": "What will happen"
+    },
+    {
+      "kind": "p",
+      "text": "when I visit for the"
+    },
+    {
+      "kind": "p",
+      "text": "first time?"
+    },
+    {
+      "kind": "p",
+      "text": "You will experience an exciting, friendly, loving, welcoming and come-as-you-are environment because we believe that no matter your life story, background or past – You belong HERE! You will be welcomed by our hospitality team as soon as you arrive and welcome you with smiles, hugs or high fives and will be ready to answer any questions that you may have. If you have kiddos, you will be escorted to our \"Next Gen Zone\" and our incredible faithKidz team will make sure your family is taken care of. As you head into the auditorium, feel free to sit together with friends and family. Our usher team will guide you to your seats so you will be ready and prepared for an excellent worship experience. The main thing we want you to know is that before you arrive, we’ve been praying for you! We can’t wait to meet you."
+    },
+    {
+      "kind": "h2",
+      "text": "What about my kids?"
+    },
+    {
+      "kind": "p",
+      "text": "Coming with the kids? No problem! We have an awesome faithKidz program on Sundays for infants to 5th graders that is fun and full of Jesus on their level. Ask a greeter or an usher to escort you to the faithkidz check-in area to get them checked in, and enjoy the worship experience!"
+    },
+    {
+      "kind": "h2",
+      "text": "What do I wear?"
+    },
+    {
+      "kind": "p",
+      "text": "You can wear whatever you’d like! Here, we focus on Jesus and not your clothes. So, just wear what makes you comfortable. Whether that is t-shirt and jean, a fancy suit, or something in between, come ready to have a great time. Again, You belong here!"
+    },
+    {
+      "kind": "h2",
+      "text": "What denomination is Faith Christian Center International?"
+    },
+    {
+      "kind": "p",
+      "text": "We are a non-denominational church."
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "contact us",
+      "href": "/contact"
+    },
+    {
+      "label": "Add another person",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "< Back",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Next >",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Submit",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14477825_800x200_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14479220_1200x900_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/12298940_1625x648_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [
+    "<form class=\"sp-subsplash-form\"><div class=\"sp-block sp-form_person-block\" data-id=\"\" data-key=\"person\" data-type=\"form_person\" style=\"\"><div class=\"sp-block-content\" style=\"\"><div class=\"sp-person-holder\" data-multiple=\"false\"><div class=\"sp-person-form\"><div class=\"sp-person-details\"><div class=\"sp-person-label\">Person</div><div class=\"sp-person-remove\">✕</div></div><div class=\"sp-fieldset sp-profile-field required\" data-required=\"true\" data-type=\"name\"><div class=\"sp-field-col\" data-id=\"a416fd1d-5abe-422e-9e45-5448f096c290\" data-key=\"firstName\">"
+  ],
+  "forms": [],
+  "layout": "standard"
+}

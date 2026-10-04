@@ -1,0 +1,697 @@
+{
+  "baptism-signup-1": {
+    "path": "/baptism-signup",
+    "id": "baptism-signup-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email Address",
+        "required": true
+      },
+      {
+        "name": "f3",
+        "type": "tel",
+        "label": "Phone Number",
+        "required": false
+      },
+      {
+        "name": "f4",
+        "type": "textarea",
+        "label": "Tell us your story.",
+        "required": false
+      },
+      {
+        "name": "f5",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Sign me up"
+  },
+  "bible-reading-group-signup-1": {
+    "path": "/bible-reading-group-signup",
+    "id": "bible-reading-group-signup-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "ZIP Code (This will help us find a group that's nearby)",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "checkbox",
+        "required": true,
+        "label": "What days of the week are best for you?",
+        "options": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Weekend"
+        ]
+      },
+      {
+        "name": "f2",
+        "type": "radio",
+        "required": true,
+        "label": "Are you interested in groups that offer childcare?",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "f3",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f4",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f5",
+        "type": "email",
+        "label": "Email Address",
+        "required": true
+      },
+      {
+        "name": "f6",
+        "type": "tel",
+        "label": "Phone Number",
+        "required": false
+      },
+      {
+        "name": "f7",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "connect-card-1": {
+    "path": "/connect-card",
+    "id": "connect-card-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "tel",
+        "label": "Phone",
+        "required": false
+      },
+      {
+        "name": "f4",
+        "type": "text",
+        "label": "Address 1",
+        "required": false
+      },
+      {
+        "name": "f5",
+        "type": "text",
+        "label": "Address 2",
+        "required": false
+      },
+      {
+        "name": "f6",
+        "type": "text",
+        "label": "Country",
+        "required": false
+      },
+      {
+        "name": "f7",
+        "type": "text",
+        "label": "City",
+        "required": false
+      },
+      {
+        "name": "f8",
+        "type": "text",
+        "label": "State",
+        "required": false
+      },
+      {
+        "name": "f9",
+        "type": "text",
+        "label": "Zip/Postal Code",
+        "required": false
+      },
+      {
+        "name": "f10",
+        "type": "radio",
+        "required": true,
+        "label": "How many times have you visited our church?",
+        "options": [
+          "This is my first time",
+          "A few times",
+          "Regular attender"
+        ]
+      },
+      {
+        "name": "f11",
+        "type": "checkbox",
+        "required": false,
+        "label": "I would like to learn more about (check all that apply):",
+        "options": [
+          "Baptism",
+          "Volunteering",
+          "Membership",
+          "Community Groups",
+          "Jesus"
+        ]
+      },
+      {
+        "name": "f12",
+        "type": "textarea",
+        "label": "How did you hear about us?",
+        "required": false
+      },
+      {
+        "name": "f13",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "contact-1": {
+    "path": "/contact",
+    "id": "contact-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": true
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Message",
+        "required": false
+      }
+    ],
+    "submitLabel": "Contact Us"
+  },
+  "event-signup-1": {
+    "path": "/event-signup",
+    "id": "event-signup-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email Address",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "tel",
+        "label": "Phone Number",
+        "required": false
+      },
+      {
+        "name": "f4",
+        "type": "radio",
+        "required": false,
+        "label": "Bringing anyone with you?",
+        "options": [
+          "Just me",
+          "+1",
+          "+2",
+          "More than 2"
+        ]
+      },
+      {
+        "name": "f5",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "jesus-1": {
+    "path": "/jesus",
+    "id": "jesus-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": true
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Decision",
+        "required": true
+      }
+    ],
+    "submitLabel": "Contact Us"
+  },
+  "men-1": {
+    "path": "/men",
+    "id": "men-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": false
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Message",
+        "required": false
+      }
+    ],
+    "submitLabel": "Contact Us"
+  },
+  "prayer-request-1": {
+    "path": "/prayer-request",
+    "id": "prayer-request-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "textarea",
+        "label": "How can we pray for you?",
+        "required": true
+      },
+      {
+        "name": "f1",
+        "type": "radio",
+        "required": true,
+        "label": "Would you like someone to follow up with you?",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "f2",
+        "type": "text",
+        "label": "First Name (optional)",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "text",
+        "label": "Last Name (optional)",
+        "required": false
+      },
+      {
+        "name": "f4",
+        "type": "email",
+        "label": "Email Address (optional)",
+        "required": false
+      },
+      {
+        "name": "f5",
+        "type": "tel",
+        "label": "Phone Number (optional)",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "preschool-1": {
+    "path": "/preschool",
+    "id": "preschool-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": false
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Message",
+        "required": false
+      }
+    ],
+    "submitLabel": "Contact Us"
+  },
+  "small-groups-20-groups-1": {
+    "path": "/small-groups-20-groups",
+    "id": "small-groups-20-groups-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "ZIP Code (This will help us find a group that's nearby)",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "checkbox",
+        "required": true,
+        "label": "What days of the week are best for you?",
+        "options": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Weekend"
+        ]
+      },
+      {
+        "name": "f2",
+        "type": "radio",
+        "required": true,
+        "label": "Are you interested in groups that offer childcare?",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "f3",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f4",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f5",
+        "type": "email",
+        "label": "Email Address",
+        "required": true
+      },
+      {
+        "name": "f6",
+        "type": "tel",
+        "label": "Phone Number",
+        "required": false
+      },
+      {
+        "name": "f7",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "small-groups-less-than-20-groups-1": {
+    "path": "/small-groups-less-than-20-groups",
+    "id": "small-groups-less-than-20-groups-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "select",
+        "required": false,
+        "label": "Which community group are you interested in attending?",
+        "options": [
+          "Downtown Group (Mondays @ 7:00pm)",
+          "Ballard Group (Tuesdays @ 7:00pm)",
+          "Capitol Hill Group (Wednesdays @ 7:00pm)",
+          "Phinney Ridge Group (Mondays @ 8:00pm)",
+          "Queen Anne Group (Mondays @ 6:00pm)"
+        ]
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f2",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f3",
+        "type": "email",
+        "label": "Email Address",
+        "required": true
+      },
+      {
+        "name": "f4",
+        "type": "tel",
+        "label": "Phone Number",
+        "required": false
+      },
+      {
+        "name": "f5",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "students-1": {
+    "path": "/students",
+    "id": "students-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": false
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Message",
+        "required": false
+      }
+    ],
+    "submitLabel": "Contact Us"
+  },
+  "volunteer-signup-1": {
+    "path": "/volunteer-signup",
+    "id": "volunteer-signup-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "radio",
+        "required": true,
+        "label": "How often would you like to volunteer?",
+        "options": [
+          "Once a month",
+          "Twice a month",
+          "Three times a month",
+          "Other"
+        ]
+      },
+      {
+        "name": "f1",
+        "type": "radio",
+        "required": true,
+        "label": "Are you a member of our church?",
+        "options": [
+          "Yes",
+          "No",
+          "In process"
+        ]
+      },
+      {
+        "name": "f2",
+        "type": "checkbox",
+        "required": true,
+        "label": "Which serving opportunities are you interested in?",
+        "options": [
+          "Altar Care/Prayer Team",
+          "Audio/Video Team",
+          "Banquet Services Team",
+          "Bookstore Team",
+          "Cafe' Team",
+          "Drama Team",
+          "Event Planning Team",
+          "Faith Kidz Ministry Team",
+          "Guest Services Team",
+          "Music Team",
+          "Photography Team",
+          "Temple Cleaning Team",
+          "Usher Team",
+          "Worship Arts Team",
+          "Other"
+        ]
+      },
+      {
+        "name": "f3",
+        "type": "text",
+        "label": "First Name",
+        "required": true
+      },
+      {
+        "name": "f4",
+        "type": "text",
+        "label": "Last Name",
+        "required": true
+      },
+      {
+        "name": "f5",
+        "type": "email",
+        "label": "Email Address",
+        "required": true
+      },
+      {
+        "name": "f6",
+        "type": "tel",
+        "label": "Mobile Number",
+        "required": true
+      },
+      {
+        "name": "f7",
+        "type": "textarea",
+        "label": "Anything else you'd like to share?",
+        "required": false
+      }
+    ],
+    "submitLabel": "Send"
+  },
+  "women-1": {
+    "path": "/women",
+    "id": "women-1",
+    "fields": [
+      {
+        "name": "f0",
+        "type": "text",
+        "label": "First Name",
+        "required": false
+      },
+      {
+        "name": "f1",
+        "type": "text",
+        "label": "Last Name",
+        "required": false
+      },
+      {
+        "name": "f2",
+        "type": "email",
+        "label": "Email",
+        "required": false
+      },
+      {
+        "name": "f3",
+        "type": "textarea",
+        "label": "Message",
+        "required": false
+      }
+    ],
+    "submitLabel": "Contact Us"
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "url": "https://www.fcci.life/sermons",
+  "path": "/sermons",
+  "slug": "sermons",
+  "title": "Faith Christian Center International - Sermons",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h3",
+      "text": "Most Recent"
+    },
+    {
+      "kind": "h2",
+      "text": "All for His Glory! - Part 7"
+    },
+    {
+      "kind": "p",
+      "text": "Sep 27, 2026 • Pastor Wayne Frye"
+    },
+    {
+      "kind": "p",
+      "text": "Drawing from Matthew 5:13-16, we are reminded that we are the salt of the earth and the light of the world, placed here with a purpose that extends far beyond ourselves. Like a lighthouse standing firm on the coastline, our lives are meant to guide others away from danger and toward the Father. The question we must each sit with is a searching one: is our light bright enough and clear enough that those around us can trace it back to God?"
+    },
+    {
+      "kind": "p",
+      "text": "This message challenges us to move beyond a private, convenient faith and step into an authentic, visible relationship with God that cannot be mistaken for anything artificial. In a world increasingly shaped by imitation, the real thing stands out, and we are called to be exactly that. It's all for His glory!"
+    },
+    {
+      "kind": "h2",
+      "text": "Media Library"
+    },
+    {
+      "kind": "p",
+      "text": "Series",
+      "href": "/media"
+    },
+    {
+      "kind": "p",
+      "text": "Topics",
+      "href": "/media/topic"
+    },
+    {
+      "kind": "p",
+      "text": "Speakers",
+      "href": "/media/speaker"
+    },
+    {
+      "kind": "p",
+      "text": "Scripture",
+      "href": "/media/scripture"
+    },
+    {
+      "kind": "p",
+      "text": "Series",
+      "href": "/media"
+    },
+    {
+      "kind": "p",
+      "text": "Topics",
+      "href": "/media/topic"
+    },
+    {
+      "kind": "p",
+      "text": "Speakers",
+      "href": "/media/speaker"
+    },
+    {
+      "kind": "p",
+      "text": "Scripture",
+      "href": "/media/scripture"
+    },
+    {
+      "kind": "p",
+      "text": "Built Different",
+      "href": "/media/series/6n9ctk3/built-different"
+    },
+    {
+      "kind": "p",
+      "text": "Unlocked",
+      "href": "/media/series/rdn4w22/unlocked"
+    },
+    {
+      "kind": "p",
+      "text": "Stretch Marks",
+      "href": "/media/series/9tk9zt2/stretch-marks"
+    },
+    {
+      "kind": "p",
+      "text": "Let Us",
+      "href": "/media/series/38djxsv/let-us"
+    },
+    {
+      "kind": "p",
+      "text": "2024 Faith & Healing Revival",
+      "href": "/media/series/bbffbrj/2024-faith-healing-revival"
+    },
+    {
+      "kind": "p",
+      "text": "Faith is Now",
+      "href": "/media/series/8mjqgk7/faith-is-now"
+    },
+    {
+      "kind": "p",
+      "text": "Healing School",
+      "href": "/media/series/tmp3my6/healing-school"
+    },
+    {
+      "kind": "p",
+      "text": "Advancing the Kingdom through the local church",
+      "href": "/media/series/78ddcw2/advancing-the-kingdom-through-the-local-church"
+    },
+    {
+      "kind": "p",
+      "text": "Resurrection Weekend 2024",
+      "href": "/media/series/2ggq7zs/resurrection-weekend-2024"
+    },
+    {
+      "kind": "p",
+      "text": "Divine Alignment",
+      "href": "/media/series/h2ph29t/divine-alignment"
+    },
+    {
+      "kind": "p",
+      "text": "Talk 2 It!",
+      "href": "/media/series/fbmhgmy/talk-2-it"
+    },
+    {
+      "kind": "p",
+      "text": "The Authority Of The Righteous Series",
+      "href": "/media/series/rmkqjvg/the-authority-of-the-righteous-series"
+    },
+    {
+      "kind": "p",
+      "text": "Manifesting Our Sonship Series",
+      "href": "/media/series/jg8zvft/manifesting-our-sonship-series"
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Series",
+      "href": "/media"
+    },
+    {
+      "label": "Topics",
+      "href": "/media/topic"
+    },
+    {
+      "label": "Speakers",
+      "href": "/media/speaker"
+    },
+    {
+      "label": "Scripture",
+      "href": "/media/scripture"
+    },
+    {
+      "label": "Built Different",
+      "href": "/media/series/6n9ctk3/built-different"
+    },
+    {
+      "label": "Unlocked",
+      "href": "/media/series/rdn4w22/unlocked"
+    },
+    {
+      "label": "Stretch Marks",
+      "href": "/media/series/9tk9zt2/stretch-marks"
+    },
+    {
+      "label": "Let Us",
+      "href": "/media/series/38djxsv/let-us"
+    },
+    {
+      "label": "2024 Faith & Healing Revival",
+      "href": "/media/series/bbffbrj/2024-faith-healing-revival"
+    },
+    {
+      "label": "Faith is Now",
+      "href": "/media/series/8mjqgk7/faith-is-now"
+    },
+    {
+      "label": "Healing School",
+      "href": "/media/series/tmp3my6/healing-school"
+    },
+    {
+      "label": "Advancing the Kingdom through the local church",
+      "href": "/media/series/78ddcw2/advancing-the-kingdom-through-the-local-church"
+    },
+    {
+      "label": "Resurrection Weekend 2024",
+      "href": "/media/series/2ggq7zs/resurrection-weekend-2024"
+    },
+    {
+      "label": "Divine Alignment",
+      "href": "/media/series/h2ph29t/divine-alignment"
+    },
+    {
+      "label": "Talk 2 It!",
+      "href": "/media/series/fbmhgmy/talk-2-it"
+    },
+    {
+      "label": "The Authority Of The Righteous Series",
+      "href": "/media/series/rmkqjvg/the-authority-of-the-righteous-series"
+    },
+    {
+      "label": "Manifesting Our Sonship Series",
+      "href": "/media/series/jg8zvft/manifesting-our-sonship-series"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=1b3ef520-664c-46b5-8a43-075fefb9547f&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=f296c765-4f47-4612-8774-9154fa6e1901&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=daff9869-d22a-4232-99c1-09b080ef85b9&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=b854f035-00d9-4f8b-aa65-ec948abe9f1d&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=208d9eec-2abd-4b1a-9970-4f4e2a45cd91&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=387f78a9-fc49-461b-b2eb-3c30e4b8ae68&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=474c978e-ce1f-4b3b-a61f-34c7e6fe52e5&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=641be0ff-0aea-4116-8e31-853f178ce539&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=4cd2cbb5-e2d1-4c5a-aa13-c6f7fc8e5991&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=64a273cd-65a4-41fd-bc0b-51c57e6cbcd4&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=82775d76-7fe8-4b0a-b6dd-aa51c9ad8345&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=d3bb3e21-049d-42ae-99ab-8f2354e00921&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://images.subsplash.com/image.jpg?id=8cc33ec8-53ff-4b07-8785-20285488b670&w=800&h=450",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [
+    "<iframe allow=\"clipboard-read; clipboard-write\" allowfullscreen=\"\" frameborder=\"0\" mozallowfullscreen=\"\" src=\"https://subsplash.com/u/-BPM5XF/media/embed/d/cmtf8ws?&amp;info=0\" webkitallowfullscreen=\"\"></iframe>"
+  ],
+  "forms": [],
+  "layout": "media"
+}
