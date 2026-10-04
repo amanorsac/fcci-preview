@@ -30,7 +30,10 @@ export const LAYOUT_BY_SLUG = {
   ]),
 };
 
-export function importAll({ srcDir, outDir, formsOut, chromeOut = join(outDir, 'chrome.json') }) {
+// Pages known to carry their own nav/footer instead of the shared chrome.
+export const CHROME_ALLOWLIST = ['home-v2'];
+
+export function importAll({ srcDir, outDir, formsOut, chromeOut = join(outDir, 'chrome.json'), chromeAllowlist = CHROME_ALLOWLIST }) {
   const pagesDir = join(srcDir, 'pages');
   const rawDir = join(srcDir, 'raw');
   mkdirSync(outDir, { recursive: true });
@@ -80,6 +83,10 @@ export function importAll({ srcDir, outDir, formsOut, chromeOut = join(outDir, '
     count += 1;
   }
 
+  const unexpected = chromeMismatches.filter((s) => !chromeAllowlist.includes(s));
+  if (unexpected.length) {
+    throw new Error(`Pages whose nav/footer differ from the shared chrome: ${unexpected.join(', ')}. Review them, then add to CHROME_ALLOWLIST.`);
+  }
   const chrome = { nav: homePage.navChrome, footer: homePage.footerChrome };
   writeFileSync(chromeOut, JSON.stringify(chrome, null, 2) + '\n');
   writeFileSync(formsOut, JSON.stringify(formDefs, null, 2) + '\n');

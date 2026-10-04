@@ -47,6 +47,11 @@ describe('POST /api/form', () => {
     const res = await post({ formId, values: required }, { ...env, RESEND_API_KEY: '' });
     expect(res.status).toBe(500);
   });
+  it('answers a JSON null body with 400', async () => {
+    const res = await worker.fetch(new Request('http://x/api/form', { method: 'POST', body: 'null' }), env, {});
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ ok: false, error: 'bad_json' });
+  });
   it('returns 413 for oversized bodies', async () => {
     const res = await post({ formId, values: { f0: 'x'.repeat(40000) } });
     expect(res.status).toBe(413);

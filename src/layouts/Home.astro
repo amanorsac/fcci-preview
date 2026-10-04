@@ -34,7 +34,7 @@ const rest = m.rest.map((sec) => {
   return { sec, withMedia, withMap };
 });
 ---
-<Base title={page.title} description={page.description} currentPath={page.path}>
+<Base title={page.title} description={page.description} currentPath={page.path} sharedFooter={!page.chromeMismatch}>
   <Hero heading={m.heading} eyebrow={m.eyebrow} lead={m.lines} image={heroImage ?? own[0]} size="full">
     {m.announcements.map((a, i) => (
       <a class="announce" href={a.href} {...(external(a.href!) ? { rel: 'noopener', target: '_blank' } : {})}>
@@ -83,14 +83,14 @@ const rest = m.rest.map((sec) => {
     </section>
   ))}
 
-  <ServiceTimes segments={site.footer} id="service-times" columns={2} />
+  {!page.chromeMismatch && <ServiceTimes segments={site.footer} id="service-times" columns={2} />}
 </Base>
 
 <style>
   .announce {
     display: inline-flex; align-items: center; gap: 14px; margin: 0 0 26px; padding: 8px 18px 8px 8px;
     border-radius: 16px; background: rgba(17, 17, 17, .55); color: #fff; font-size: .88rem; font-weight: 600;
-    border: 1px solid rgba(238, 123, 26, .6); text-decoration: none; max-width: 100%;
+    border: 1px solid rgb(var(--accent-rgb) / .6); text-decoration: none; max-width: 100%;
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   }
   .announce:hover { border-color: var(--accent); background: rgba(17, 17, 17, .75); }

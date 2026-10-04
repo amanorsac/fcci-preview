@@ -27,6 +27,15 @@ const ICONS: Record<string, string> = {
 <footer class="site-footer tone-dark">
   <div class="container inner">
     <a class="logo" href="/" aria-label={name}><img src={logo.src} alt="" width={logo.width} height={logo.height} loading="lazy" /></a>
+    {columns.length === 0 && (
+      <div class="socials">
+        {socials.map((s) => (
+          <a href={s.href} aria-label={s.label} rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d={ICONS[s.network]} fill="currentColor" /></svg>
+          </a>
+        ))}
+      </div>
+    )}
     <div class="cols">
       {columns.map((col) => (
         <div class="col">

@@ -18,6 +18,7 @@ for (const slug of PAGES) {
       await expect(page.locator(`iframe[src="${e}"]`)).toHaveCount(1);
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await expect(page.locator('h1')).toHaveCount(1);
     const axe = await new AxeBuilder({ page }).exclude('iframe').analyze();
     expect(axe.violations.filter((v) => ['serious', 'critical'].includes(v.impact))).toEqual([]);
   });
@@ -31,6 +32,14 @@ test('pages stay usable when Subsplash is blocked', async ({ page }) => {
   await expect(page.getByText('All for His Glory! - Part 6')).toBeVisible();
   await page.goto('/give');
   await expect(page.getByText(/FCCINTL/).first()).toBeVisible();
+});
+
+test('empty watch pages stay usable when Subsplash is blocked', async ({ page }) => {
+  await page.route('**/subsplash.com/**', (r) => r.abort());
+  for (const path of ['/watch', '/watch-live']) {
+    await page.goto(path);
+    await expect(page.locator('main a[href="/sermons"]')).toBeVisible();
+  }
 });
 
 test('give keeps the text-to-give wording and makes it tappable', async ({ page }) => {

@@ -9,10 +9,13 @@ interface Props {
   title: string;
   description?: string;
   currentPath?: string;
+  /** False when the page carries its own footer text (chrome mismatch). */
+  sharedFooter?: boolean;
 }
-const { title, description = '', currentPath = '/' } = Astro.props;
+const { title, description = '', currentPath = '/', sharedFooter = true } = Astro.props;
 const c = site.colors;
-const themeVars = `:root{--accent:${c.accent};--accent-hover:${c.accentHover};--ink:${c.ink};--ink-2:${c.ink2};--gray:${c.gray};--paper:${c.paper};--paper-2:${c.paper2};}`;
+const rgb = (hex: string) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(' ');
+const themeVars = `:root{--accent:${c.accent};--accent-rgb:${rgb(c.accent)};--accent-hover:${c.accentHover};--ink:${c.ink};--ink-2:${c.ink2};--gray:${c.gray};--paper:${c.paper};--paper-2:${c.paper2};}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -35,7 +38,7 @@ const themeVars = `:root{--accent:${c.accent};--accent-hover:${c.accentHover};--
     <main id="main" tabindex="-1">
       <slot />
     </main>
-    <Footer segments={site.footer} links={site.footerLinks} socials={site.socials} logo={site.logo} name={site.name} />
+    <Footer segments={sharedFooter ? site.footer : []} links={site.footerLinks} socials={site.socials} logo={site.logo} name={site.name} />
     <script>
       const motionOK = !matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (motionOK && 'IntersectionObserver' in window) {

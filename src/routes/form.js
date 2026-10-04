@@ -27,6 +27,7 @@ export async function handleForm(request, env) {
   if (text.length > MAX_BODY) return json({ ok: false, error: 'too_large' }, 413);
   let body;
   try { body = JSON.parse(text); } catch { return json({ ok: false, error: 'bad_json' }, 400); }
+  if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ ok: false, error: 'bad_json' }, 400);
 
   if (body.company_hp) {
     console.warn('[form] honeypot hit');

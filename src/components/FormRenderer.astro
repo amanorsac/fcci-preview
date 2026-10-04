@@ -82,17 +82,17 @@ const uid = (f: Field) => `${form.id}-${f.name}`;
   .f-label, .f-legend { font-weight: 600; font-size: .95rem; padding: 0; }
   .f-legend { margin: 0; font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; }
   /* Drawn by CSS so it is not part of the page's text. */
-  .is-req::after { content: '*'; color: #b4570d; margin-left: 4px; }
+  .is-req::after { content: '*'; color: color-mix(in srgb, var(--accent) 72%, black); margin-left: 4px; }
   .f-note { margin: 0; color: var(--gray); }
   input:not([type=radio]):not([type=checkbox]), textarea, select {
     width: 100%; font: inherit; color: inherit; padding: 13px 14px; border-radius: 12px;
     border: 1.5px solid #c9c4bd; background: #fff; transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
   }
-  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(238, 123, 26, .2); }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / .2); }
   [aria-invalid='true'] { border-color: #b3261e !important; }
   .opts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
   .opt { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid #ddd8d1; cursor: pointer; }
-  .opt:has(input:checked) { border-color: var(--accent); background: rgba(238, 123, 26, .08); }
+  .opt:has(input:checked) { border-color: var(--accent); background: rgb(var(--accent-rgb) / .08); }
   .opt input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; }
   .actions { margin-top: 24px; }
   .actions .btn[aria-busy='true'] { opacity: .7; cursor: progress; }

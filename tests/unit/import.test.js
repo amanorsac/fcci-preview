@@ -49,3 +49,11 @@ describe('links outside the captured pages', () => {
     expect(seg.href).toBe('/sermons');
   });
 });
+
+describe('chrome mismatches', () => {
+  it('fail the import unless the page is on the allowlist', () => {
+    const out = mkdtempSync(join(tmpdir(), 'fcci-import-cm-'));
+    expect(() => importAll({ srcDir: 'source', outDir: out, formsOut: join(out, 'f.json'), chromeOut: join(out, 'c.json'), chromeAllowlist: [] }))
+      .toThrow(/home-v2/);
+  });
+});

@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { extractBuiltSegments, normalize } from './extract.mjs';
 import { ALLOWED_EXTRA_TEXT, SHARED_CHROME_TEXT, site } from '../../site.config';
+import chrome from '../../src/content/chrome.json' with { type: 'json' };
 import { DROPPED_SOURCE_TEXT } from '../../scripts/lib/parse-source.mjs';
 
 describe('extractBuiltSegments', () => {
@@ -82,7 +83,11 @@ describe('wording fidelity on every page', () => {
         .filter((x) => x.type === 'select' && src.includes(normalize((x.options ?? []).join(''))))
         .flatMap((x) => x.options.map(normalize));
       const allowed = new Set([
-        ...src, ...optionPieces, ...SHARED_CHROME_TEXT.map(normalize),
+        ...src, ...optionPieces,
+        // A page with its own footer must not also show the shared footer.
+        ...(page.chromeMismatch
+          ? SHARED_CHROME_TEXT.filter((t) => !chrome.footer.some((s) => s.text === t))
+          : SHARED_CHROME_TEXT).map(normalize),
         ...ALLOWED_EXTRA_TEXT.map(normalize),
         ...page.forms.flatMap((f) => [f.successText, site.formDefaultSuccess]).filter(Boolean).map(normalize),
       ]);
