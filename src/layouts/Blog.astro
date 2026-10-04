@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Base from './Base.astro';
 import Blocks from '../components/Blocks.astro';
-import { pageImages } from '../lib/images';
+import { pageImages, altFor } from '../lib/images';
 import { site } from '../../site.config';
 import type { Segment } from '../lib/page';
 
@@ -54,7 +54,7 @@ const article = segs.slice(metaEnd);
       </header>
       {images[0] && (
         <div class="container narrow cover-wrap">
-          <Picture src={images[0]} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1600]} sizes="(min-width: 900px) 860px, 100vw" class="cover" loading="eager" fetchpriority="high" />
+          <Picture src={images[0]} alt={altFor(images[0])} formats={['avif', 'webp']} widths={[640, 1024, 1600]} sizes="(min-width: 900px) 860px, 100vw" class="cover" loading="eager" fetchpriority="high" />
         </div>
       )}
       <div class="container narrow article">

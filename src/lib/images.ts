@@ -40,3 +40,12 @@ export function pageImages(images: { src: string }[], skipIds: string[] = []): I
 export function imageById(id: string): ImageMetadata | undefined {
   return byId.get(id);
 }
+
+import altText from '../content/alt-text.json';
+/** Description for a content image, by upload id (empty for decorative use). */
+export function altFor(img: ImageMetadata | undefined): string {
+  if (!img) return '';
+  const name = img.src.split('/').pop()?.split('?')[0] ?? '';
+  const id = name.split('_')[0];
+  return (altText as Record<string, string>)[id] ?? '';
+}
