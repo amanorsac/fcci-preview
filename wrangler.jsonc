@@ -7,6 +7,6 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
-  "vars": { "PREVIEW_INBOX": "amanorsac@gmail.com" },
-  "previews": { "vars": { "PREVIEW_INBOX": "amanorsac@gmail.com" } }
+  "vars": { "PREVIEW_INBOX": "amanorsac@gmail.com", "SITE_SHORT_NAME": "FCCI" },
+  "previews": { "vars": { "PREVIEW_INBOX": "amanorsac@gmail.com", "SITE_SHORT_NAME": "FCCI" } }
 }

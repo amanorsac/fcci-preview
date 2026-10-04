@@ -85,13 +85,20 @@ export const site = {
     panelImages: ['24975047', '23035221', '19289338'],
   },
 
-  preview: { enabled: true, text: 'Preview of a redesigned fcci.life by CTSD' },
+  preview: {
+    enabled: true,
+    text: 'Preview of a redesigned fcci.life by CTSD',
+    // Shown only if a form fails to send (preview-only wording).
+    formError: 'This preview could not send your message. Please try again.',
+  },
+  // The church's own form confirmation, for forms that captured none.
+  formDefaultSuccess: 'Thank you for contacting us! We will respond shortly.',
   ui: { skipLink: 'Skip to content' },
 };
 
 // Visible text that is allowed on every page in addition to the page's own
 // source text. The fidelity test reads this list.
-export const ALLOWED_EXTRA_TEXT = [site.preview.text, site.ui.skipLink];
+export const ALLOWED_EXTRA_TEXT = [site.preview.text, site.ui.skipLink, site.preview.formError];
 export const SHARED_CHROME_TEXT = [
   ...chrome.nav,
   ...chrome.footer.map((s) => s.text),

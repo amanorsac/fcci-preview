@@ -142,3 +142,9 @@ it('starts a form run at its first field even when the legend comes later', () =
   expect(texts(p)).not.toContain('Please share your testimony here.');
   expect(texts(p)).not.toContain('Yes');
 });
+
+it('captures the form success message and subject from the church\'s form settings', () => {
+  const [form] = parseForms(raw('prayer-request'), 'prayer-request');
+  expect(form.successText).toBe('Thank you for contacting us! We will respond shortly.');
+  expect(form.subject).toBe('Prayer Request');
+});

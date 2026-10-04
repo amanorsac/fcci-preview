@@ -1,6 +1,6 @@
 ---
 // Renders verbatim content segments with semantic tags. Text is never altered.
-import FormSlot from './FormSlot.astro';
+import FormRenderer from './FormRenderer.astro';
 
 interface Segment { kind: string; text: string; href?: string; formId?: string }
 interface Props { segments: Segment[]; forms?: any[]; pagePath?: string }
@@ -24,7 +24,7 @@ const smsParts = (t: string) => {
   {segments.map((s) => {
     if (s.kind === 'form') {
       const form = forms.find((f) => f.id === s.formId);
-      return form ? <FormSlot form={form} pagePath={pagePath} /> : null;
+      return form ? <FormRenderer form={form} pagePath={pagePath} /> : null;
     }
     if (s.kind === 'h2' && s.text.length > 60) return <h2 class="h2-long">{s.text}</h2>;
     if (s.kind === 'h2') return <h2 class="display h2">{s.href ? <a href={s.href} {...linkAttrs(s.href)}>{s.text}</a> : s.text}</h2>;

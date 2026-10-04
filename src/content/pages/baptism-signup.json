@@ -293,7 +293,9 @@
           "required": false
         }
       ],
-      "submitLabel": "Sign me up"
+      "submitLabel": "Sign me up",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Baptism Signup"
     }
   ],
   "layout": "form"

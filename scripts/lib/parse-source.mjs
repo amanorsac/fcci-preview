@@ -171,9 +171,14 @@ export function parseForms(rawHtml, slug) {
       .filter(Boolean);
     const submitLabel = controls.at(-1) || '';
     const legend = $(form).find('.sp-person-label').first().text().trim();
+    const holder = $(form).closest('.form-holder');
+    const successText = (holder.attr('data-sent') || '').trim();
+    const subject = (holder.attr('data-subject') || '').trim();
     forms.push({
       id: `${slug}-${i + 1}`, fields, submitLabel,
       ...(legend ? { legend } : {}),
+      ...(successText ? { successText } : {}),
+      ...(subject ? { subject } : {}),
     });
   });
   return forms;

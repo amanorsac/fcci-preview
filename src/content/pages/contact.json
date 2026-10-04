@@ -281,7 +281,9 @@
           "required": false
         }
       ],
-      "submitLabel": "Contact U"
+      "submitLabel": "Contact U",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Contact Request"
     }
   ],
   "layout": "standard"

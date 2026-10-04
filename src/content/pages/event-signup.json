@@ -299,7 +299,9 @@
           "required": false
         }
       ],
-      "submitLabel": "Send"
+      "submitLabel": "Send",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Volunteer Signup"
     }
   ],
   "layout": "form"

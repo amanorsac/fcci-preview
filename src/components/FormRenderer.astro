@@ -1,0 +1,168 @@
+---
+// Renders a captured form with its exact labels, options and submit text.
+// Submits to /api/form; success shows the form's own confirmation message.
+import { site } from '../../site.config';
+
+interface Field { name: string; type: string; label: string; required: boolean; options?: string[] }
+interface Props {
+  form: { id: string; fields: Field[]; submitLabel: string; legend?: string; successText?: string };
+  pagePath: string;
+}
+const { form } = Astro.props;
+const success = form.successText || site.formDefaultSuccess;
+const auto: Record<string, string> = { email: 'email', tel: 'tel' };
+const uid = (f: Field) => `${form.id}-${f.name}`;
+---
+<form class="fform" data-form-id={form.id} action="/api/form" method="post">
+  <div class="fields">
+    {form.legend && <p class="f-legend">{form.legend}</p>}
+    {form.fields.map((f) => {
+      if (f.type === 'note') return <p class="f-note">{f.label}</p>;
+      if (f.type === 'radio' || f.type === 'checkbox') {
+        return (
+          <fieldset class="field group" data-field={f.name}>
+            <legend class:list={['f-label', { 'is-req': f.required }]}>{f.label}</legend>
+            <div class="opts">
+              {f.options?.map((o) => (
+                <label class="opt">
+                  <input type={f.type} name={f.name} value={o} required={f.type === 'radio' && f.required} />
+                  <span>{o}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        );
+      }
+      if (f.type === 'select') {
+        return (
+          <div class="field" data-field={f.name}>
+            <label class:list={['f-label', { 'is-req': f.required }]} for={uid(f)}>{f.label}</label>
+            <select id={uid(f)} name={f.name} required={f.required}>
+              <option value=""></option>
+              {f.options?.map((o) => <option value={o}>{o}</option>)}
+            </select>
+          </div>
+        );
+      }
+      return (
+        <div class:list={['field', { wide: f.type === 'textarea' }]} data-field={f.name}>
+          <label class:list={['f-label', { 'is-req': f.required }]} for={uid(f)}>{f.label}</label>
+          {f.type === 'textarea' ? (
+            <textarea id={uid(f)} name={f.name} rows="5" maxlength="4000" required={f.required}></textarea>
+          ) : (
+            <input id={uid(f)} name={f.name} type={f.type} maxlength="4000" required={f.required} autocomplete={auto[f.type] ?? 'on'} />
+          )}
+        </div>
+      );
+    })}
+  </div>
+  <div class="hp" aria-hidden="true">
+    <input type="text" name="company_hp" tabindex="-1" autocomplete="off" />
+  </div>
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">{form.submitLabel}</button>
+  </div>
+  <p class="f-status" role="status" hidden>{site.preview.formError}</p>
+  <div class="f-success" hidden tabindex="-1">
+    <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2" /><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.2" /></svg>
+    <p>{success}</p>
+  </div>
+</form>
+
+<style>
+  .fform {
+    margin: 1.6em 0; padding: clamp(22px, 4vw, 40px); border-radius: var(--radius-lg);
+    background: var(--paper); color: var(--ink); box-shadow: 0 20px 60px -30px rgba(0, 0, 0, .45);
+    border-top: 4px solid var(--accent);
+  }
+  .fields { display: grid; gap: 18px 20px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .fields { grid-template-columns: 1fr 1fr; } .field.wide, .group, .f-note, .f-legend { grid-column: 1 / -1; } }
+  .field { display: grid; gap: 8px; min-width: 0; }
+  .group { border: 0; padding: 0; margin: 0; }
+  .f-label, .f-legend { font-weight: 600; font-size: .95rem; padding: 0; }
+  .f-legend { margin: 0; font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; }
+  /* Drawn by CSS so it is not part of the page's text. */
+  .is-req::after { content: '*'; color: #b4570d; margin-left: 4px; }
+  .f-note { margin: 0; color: var(--gray); }
+  input:not([type=radio]):not([type=checkbox]), textarea, select {
+    width: 100%; font: inherit; color: inherit; padding: 13px 14px; border-radius: 12px;
+    border: 1.5px solid #c9c4bd; background: #fff; transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
+  }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(238, 123, 26, .2); }
+  [aria-invalid='true'] { border-color: #b3261e !important; }
+  .opts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .opt { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid #ddd8d1; cursor: pointer; }
+  .opt:has(input:checked) { border-color: var(--accent); background: rgba(238, 123, 26, .08); }
+  .opt input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; }
+  .actions { margin-top: 24px; }
+  .actions .btn[aria-busy='true'] { opacity: .7; cursor: progress; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .f-status { margin: 16px 0 0; color: #b3261e; font-weight: 600; }
+  .f-success { display: grid; justify-items: start; gap: 12px; color: var(--ink); }
+  .f-success[hidden] { display: none; }
+  .f-success svg { color: var(--accent); }
+  .f-success p { margin: 0; font-size: 1.15rem; font-weight: 600; }
+  .fform.is-sent .fields, .fform.is-sent .actions, .fform.is-sent .f-status { display: none; }
+</style>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('form.fform')) {
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const status = form.querySelector<HTMLElement>('.f-status')!;
+    const success = form.querySelector<HTMLElement>('.f-success')!;
+    let busy = false;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (busy) return;
+      if (!form.reportValidity()) return;
+      busy = true;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      status.hidden = true;
+      form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+
+      const data = new FormData(form);
+      const values: Record<string, string | string[]> = {};
+      for (const [k, v] of data.entries()) {
+        if (k === 'company_hp') continue;
+        const prev = values[k];
+        values[k] = prev === undefined ? String(v) : ([] as string[]).concat(prev, String(v));
+      }
+      for (const box of form.querySelectorAll<HTMLInputElement>('input[type=checkbox]')) {
+        const v = values[box.name];
+        if (v !== undefined && !Array.isArray(v)) values[box.name] = [v];
+      }
+
+      try {
+        const res = await fetch('/api/form', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ formId: form.dataset.formId, values, company_hp: data.get('company_hp') || '' }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (res.ok && out.ok) {
+          form.classList.add('is-sent');
+          success.hidden = false;
+          success.focus();
+          return;
+        }
+        if (out.errors) {
+          let first: HTMLElement | null = null;
+          for (const name of Object.keys(out.errors)) {
+            const el = form.querySelector<HTMLElement>(`[name="${CSS.escape(name)}"]`);
+            if (el) { el.setAttribute('aria-invalid', 'true'); first ??= el; }
+          }
+          first?.focus();
+        }
+        status.hidden = false;
+      } catch {
+        status.hidden = false;
+      } finally {
+        busy = false;
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>

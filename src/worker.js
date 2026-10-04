@@ -1,5 +1,6 @@
 // Serves the built Astro site from ASSETS and handles the one API route.
-// POST /api/form is wired in by the forms task; until then it is a stub.
+
+import { handleForm } from './routes/form.js';
 
 const json = (body, status = 200, headers = {}) =>
   new Response(JSON.stringify(body), {
@@ -10,7 +11,7 @@ const json = (body, status = 200, headers = {}) =>
 export const routes = [
   {
     path: '/api/form',
-    handle: async () => json({ ok: false, error: 'server' }, 500),
+    handle: (request, env) => handleForm(request, env),
   },
 ];
 

@@ -40,7 +40,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Sign me up"
+    "submitLabel": "Sign me up",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Baptism Signup"
   },
   "bible-reading-group-signup-1": {
     "path": "/bible-reading-group-signup",
@@ -107,7 +109,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Small Groups"
   },
   "connect-card-1": {
     "path": "/connect-card",
@@ -210,7 +214,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Connect Card"
   },
   "contact-1": {
     "path": "/contact",
@@ -241,7 +247,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   },
   "event-signup-1": {
     "path": "/event-signup",
@@ -290,7 +298,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Volunteer Signup"
   },
   "i-m-new-1": {
     "path": "/i-m-new",
@@ -359,7 +369,9 @@
         "required": true
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   },
   "men-1": {
     "path": "/men",
@@ -390,7 +402,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   },
   "prayer-request-1": {
     "path": "/prayer-request",
@@ -437,7 +451,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Prayer Request"
   },
   "preschool-1": {
     "path": "/preschool",
@@ -468,7 +484,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   },
   "small-groups-20-groups-1": {
     "path": "/small-groups-20-groups",
@@ -535,7 +553,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Small Groups"
   },
   "small-groups-less-than-20-groups-1": {
     "path": "/small-groups-less-than-20-groups",
@@ -585,7 +605,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Small Groups"
   },
   "students-1": {
     "path": "/students",
@@ -616,7 +638,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   },
   "testimonies-1": {
     "path": "/testimonies",
@@ -753,7 +777,9 @@
         "required": false
       }
     ],
-    "submitLabel": "Send"
+    "submitLabel": "Send",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Volunteer Signup"
   },
   "women-1": {
     "path": "/women",
@@ -784,6 +810,8 @@
         "required": false
       }
     ],
-    "submitLabel": "Contact U"
+    "submitLabel": "Contact U",
+    "successText": "Thank you for contacting us! We will respond shortly.",
+    "subject": "Contact Request"
   }
 }

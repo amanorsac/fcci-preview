@@ -297,7 +297,9 @@
           "required": false
         }
       ],
-      "submitLabel": "Send"
+      "submitLabel": "Send",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Prayer Request"
     }
   ],
   "layout": "form"
