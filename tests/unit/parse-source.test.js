@@ -106,3 +106,39 @@ describe('edge cases found during import', () => {
     expect(texts(p)).not.toContain(':');
   });
 });
+
+describe('content clean-up rules', () => {
+  it('drops links from a segment to its own page', () => {
+    const p = parseSourcePage(src('what-we-believe'));
+    expect(p.segments[0]).toEqual({ kind: 'h1', text: 'What We Believe' });
+  });
+
+  it('drops empty headings left by the crawler', () => {
+    const p = parseSourcePage(src('kidz-amp-youth'));
+    expect(texts(p)).not.toContain('##');
+    expect(texts(p)).not.toContain('');
+  });
+
+  it('parses the Subsplash-bound person form on I\'m New', () => {
+    const [form] = parseForms(raw('i-m-new'), 'i-m-new');
+    expect(form.legend).toBe('Person');
+    expect(form.fields.map((f) => f.label)).toEqual(['First Name', 'Last Name', 'Email', 'Phone Number']);
+    expect(form.submitLabel).toBe('Submit');
+  });
+
+  it('replaces the whole I\'m New widget run with one form marker', () => {
+    const p = parseSourcePage(src('i-m-new'), raw('i-m-new'));
+    for (const t of ['Person', '✕', 'First Name', 'Add another person', 'Next >', 'Submit']) {
+      expect(texts(p)).not.toContain(t);
+    }
+    expect(p.segments.filter((s) => s.kind === 'form')).toHaveLength(1);
+    // Widget control wording is recorded from the visible text, not raw HTML.
+    expect(p.forms[0].droppedControls).toEqual(['✕', 'Add another person', '< Back', 'Next >']);
+  });
+});
+
+it('starts a form run at its first field even when the legend comes later', () => {
+  const p = parseSourcePage(src('testimonies'), raw('testimonies'));
+  expect(texts(p)).not.toContain('Please share your testimony here.');
+  expect(texts(p)).not.toContain('Yes');
+});

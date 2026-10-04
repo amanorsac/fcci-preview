@@ -55,8 +55,7 @@
     },
     {
       "kind": "h2",
-      "text": "Contact Us",
-      "href": "/students"
+      "text": "Contact Us"
     },
     {
       "kind": "h3",
@@ -66,6 +65,10 @@
       "kind": "form",
       "formId": "students-1",
       "text": ""
+    },
+    {
+      "kind": "p",
+      "text": "Contact Us"
     }
   ],
   "navChrome": [
@@ -338,7 +341,7 @@
           "required": false
         }
       ],
-      "submitLabel": "Contact Us"
+      "submitLabel": "Contact U"
     }
   ],
   "layout": "ministry"

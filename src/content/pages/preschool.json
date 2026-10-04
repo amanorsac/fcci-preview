@@ -43,8 +43,7 @@
     },
     {
       "kind": "h2",
-      "text": "Contact Us",
-      "href": "/preschool"
+      "text": "Contact Us"
     },
     {
       "kind": "h3",
@@ -54,6 +53,10 @@
       "kind": "form",
       "formId": "preschool-1",
       "text": ""
+    },
+    {
+      "kind": "p",
+      "text": "Contact Us"
     }
   ],
   "navChrome": [
@@ -326,7 +329,7 @@
           "required": false
         }
       ],
-      "submitLabel": "Contact Us"
+      "submitLabel": "Contact U"
     }
   ],
   "layout": "ministry"

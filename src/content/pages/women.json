@@ -55,13 +55,11 @@
     },
     {
       "kind": "p",
-      "text": "Find a group",
-      "href": "/women"
+      "text": "Find a group"
     },
     {
       "kind": "h2",
-      "text": "Contact Us",
-      "href": "/women"
+      "text": "Contact Us"
     },
     {
       "kind": "h3",
@@ -71,6 +69,10 @@
       "kind": "form",
       "formId": "women-1",
       "text": ""
+    },
+    {
+      "kind": "p",
+      "text": "Contact Us"
     }
   ],
   "navChrome": [
@@ -347,7 +349,7 @@
           "required": false
         }
       ],
-      "submitLabel": "Contact Us"
+      "submitLabel": "Contact U"
     }
   ],
   "layout": "ministry"

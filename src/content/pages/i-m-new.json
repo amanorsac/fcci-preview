@@ -22,48 +22,9 @@
       "text": "We want to do anything we can to help remove any worry or stress you may have before you get here. Scroll below to see what you can expect upon arrival. If you have any questions, please contact us, and we’ll be glad to help you."
     },
     {
-      "kind": "p",
-      "text": "Person"
-    },
-    {
-      "kind": "p",
-      "text": "✕"
-    },
-    {
-      "kind": "p",
-      "text": "First Name"
-    },
-    {
-      "kind": "p",
-      "text": "Last Name"
-    },
-    {
-      "kind": "p",
-      "text": "Email"
-    },
-    {
-      "kind": "p",
-      "text": "Phone Number"
-    },
-    {
-      "kind": "p",
-      "text": "Add another person",
-      "href": "/i-m-new"
-    },
-    {
-      "kind": "p",
-      "text": "< Back",
-      "href": "/i-m-new"
-    },
-    {
-      "kind": "p",
-      "text": "Next >",
-      "href": "/i-m-new"
-    },
-    {
-      "kind": "p",
-      "text": "Submit",
-      "href": "/i-m-new"
+      "kind": "form",
+      "formId": "i-m-new-1",
+      "text": ""
     },
     {
       "kind": "h2",
@@ -371,6 +332,44 @@
   "embeds": [
     "<form class=\"sp-subsplash-form\"><div class=\"sp-block sp-form_person-block\" data-id=\"\" data-key=\"person\" data-type=\"form_person\" style=\"\"><div class=\"sp-block-content\" style=\"\"><div class=\"sp-person-holder\" data-multiple=\"false\"><div class=\"sp-person-form\"><div class=\"sp-person-details\"><div class=\"sp-person-label\">Person</div><div class=\"sp-person-remove\">✕</div></div><div class=\"sp-fieldset sp-profile-field required\" data-required=\"true\" data-type=\"name\"><div class=\"sp-field-col\" data-id=\"a416fd1d-5abe-422e-9e45-5448f096c290\" data-key=\"firstName\">"
   ],
-  "forms": [],
+  "forms": [
+    {
+      "id": "i-m-new-1",
+      "fields": [
+        {
+          "name": "f0",
+          "type": "text",
+          "label": "First Name",
+          "required": true
+        },
+        {
+          "name": "f1",
+          "type": "text",
+          "label": "Last Name",
+          "required": true
+        },
+        {
+          "name": "f2",
+          "type": "email",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "name": "f3",
+          "type": "tel",
+          "label": "Phone Number",
+          "required": true
+        }
+      ],
+      "submitLabel": "Submit",
+      "legend": "Person",
+      "droppedControls": [
+        "✕",
+        "Add another person",
+        "< Back",
+        "Next >"
+      ]
+    }
+  ],
   "layout": "standard"
 }

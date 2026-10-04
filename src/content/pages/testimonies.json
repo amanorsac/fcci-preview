@@ -14,64 +14,9 @@
       "text": "God is good!!! Part of our mission is to TRANSFORM LIVES through the love and power of God, and we love hearing stories about what our good God is doing in the lives of people. Thank you for taking a moment to allow us to rejoice with you over the victory you or someone you know has experienced. God bless!"
     },
     {
-      "kind": "p",
-      "text": "Please share your testimony here."
-    },
-    {
-      "kind": "p",
-      "text": "Would you like someone to follow up with you?"
-    },
-    {
-      "kind": "p",
-      "text": "Yes"
-    },
-    {
-      "kind": "p",
-      "text": "No"
-    },
-    {
-      "kind": "p",
-      "text": "Contact"
-    },
-    {
-      "kind": "p",
-      "text": "✕"
-    },
-    {
-      "kind": "p",
-      "text": "First Name"
-    },
-    {
-      "kind": "p",
-      "text": "Last Name"
-    },
-    {
-      "kind": "p",
-      "text": "Email"
-    },
-    {
-      "kind": "p",
-      "text": "Phone Number"
-    },
-    {
-      "kind": "p",
-      "text": "Add another person",
-      "href": "/testimonies"
-    },
-    {
-      "kind": "p",
-      "text": "< Back",
-      "href": "/testimonies"
-    },
-    {
-      "kind": "p",
-      "text": "Next >",
-      "href": "/testimonies"
-    },
-    {
-      "kind": "p",
-      "text": "Submit",
-      "href": "/testimonies"
+      "kind": "form",
+      "formId": "testimonies-1",
+      "text": ""
     }
   ],
   "navChrome": [
@@ -315,6 +260,60 @@
   "embeds": [
     "<form class=\"sp-subsplash-form\"><div class=\"sp-block sp-text-block\" data-id=\"\" data-key=\"block_text_51920\" data-type=\"text\" style=\"\"><div class=\"sp-block-content\" style=\"\">God is good!!!  Part of our mission is to TRANSFORM LIVES through the love and power of God, and we love hearing stories about what our good God is doing in the lives of people.  Thank you for taking a moment to allow us to rejoice with you over the victory you or someone you know has experienced.  God bless!  </div></div><div class=\"sp-block sp-form_textarea-block\" data-id=\"\" data-key=\"pleaseShareYourTestimonyHere\" data-typ"
   ],
-  "forms": [],
+  "forms": [
+    {
+      "id": "testimonies-1",
+      "fields": [
+        {
+          "name": "f0",
+          "type": "textarea",
+          "label": "Please share your testimony here.",
+          "required": true
+        },
+        {
+          "name": "f1",
+          "type": "radio",
+          "required": false,
+          "label": "Would you like someone to follow up with you?",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "name": "f2",
+          "type": "text",
+          "label": "First Name",
+          "required": false
+        },
+        {
+          "name": "f3",
+          "type": "text",
+          "label": "Last Name",
+          "required": false
+        },
+        {
+          "name": "f4",
+          "type": "email",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "name": "f5",
+          "type": "tel",
+          "label": "Phone Number",
+          "required": false
+        }
+      ],
+      "submitLabel": "Submit",
+      "legend": "Contact",
+      "droppedControls": [
+        "✕",
+        "Add another person",
+        "< Back",
+        "Next >"
+      ]
+    }
+  ],
   "layout": "standard"
 }

@@ -117,7 +117,7 @@ export function parseForms(rawHtml, slug) {
   if (!rawHtml) return [];
   const $ = cheerio.load(rawHtml);
   const forms = [];
-  $('form.sp-form').each((i, form) => {
+  $('form.sp-form, form.sp-subsplash-form').each((i, form) => {
     const fields = [];
     $(form).find('.sp-fieldset').each((_, fs) => {
       const dataType = $(fs).attr('data-type') || 'text';
@@ -162,16 +162,25 @@ export function parseForms(rawHtml, slug) {
         });
       });
     });
-    const submitLabel =
-      $(form).find('.sp-button').first().attr('data-label') ||
-      $(form).find('.sp-button').first().text().trim() || '';
-    forms.push({ id: `${slug}-${i + 1}`, fields, submitLabel });
+    // The last button-like control submits; any others are widget controls
+    // (e.g. "Add another person") that the redesign does not reproduce.
+    const controls = $(form)
+      .find('.sp-button, a, button, .sp-person-remove')
+      .map((_, b) => ($(b).attr('data-label') || $(b).text()).replace(/s+/g, ' ').trim())
+      .get()
+      .filter(Boolean);
+    const submitLabel = controls.at(-1) || '';
+    const legend = $(form).find('.sp-person-label').first().text().trim();
+    forms.push({
+      id: `${slug}-${i + 1}`, fields, submitLabel,
+      ...(legend ? { legend } : {}),
+    });
   });
   return forms;
 }
 
 function formTexts(form) {
-  const t = [];
+  const t = form.legend ? [form.legend] : [];
   for (const f of form.fields) {
     t.push(f.label);
     if (f.options) {
@@ -185,18 +194,31 @@ function formTexts(form) {
 }
 
 function replaceFormText(segments, form) {
-  const texts = formTexts(form);
-  const first = form.fields[0]?.label;
-  const start = segments.findIndex((s) => s.text === first);
-  if (start === -1) return segments;
-  let end = start;
-  let ti = 0;
-  while (end < segments.length && ti < texts.length) {
-    const at = texts.indexOf(segments[end].text, ti);
-    if (at === -1) break;
-    ti = at + 1;
-    end += 1;
+  const own = new Set(formTexts(form));
+  const starts = [form.legend, form.fields[0]?.label]
+    .filter(Boolean)
+    .map((t) => segments.findIndex((s) => s.text === t))
+    .filter((i) => i !== -1);
+  if (!starts.length) return segments;
+  const start = Math.min(...starts);
+
+  // The form's run ends at its submit label; fall back to the last
+  // consecutive form text when no submit label is captured.
+  const window = segments.slice(start, start + own.size + 12).map((s) => s.text);
+  const submitOffset = form.submitLabel ? window.indexOf(form.submitLabel) : -1;
+  let end;
+  if (submitOffset !== -1) {
+    end = start + submitOffset + 1;
+  } else {
+    end = start;
+    while (end < segments.length && own.has(segments[end].text)) end += 1;
   }
+
+  // Anything in the run that is not the form's own text is a widget control
+  // (e.g. "Next >"). Record its visible wording for the fidelity test.
+  const controls = segments.slice(start, end).map((s) => s.text).filter((t) => !own.has(t));
+  if (controls.length) form.droppedControls = controls;
+
   return [
     ...segments.slice(0, start),
     { kind: 'form', formId: form.id, text: '' },
@@ -230,12 +252,14 @@ export function parseSourcePage(md, rawHtml) {
   const toSeg = (l) => {
     const s = toSegment(l);
     const href = hrefFor(s.text, links);
-    return href ? { ...s, href } : s;
+    return href && href !== path ? { ...s, href } : s;
   };
+  const isArtifact = (l) => /^#{1,3}$/.test(l);
 
   let segments = [...body, ...extraFooter]
-    .filter((l) => !DROPPED_SOURCE_TEXT.includes(l))
-    .map(toSeg);
+    .filter((l) => !DROPPED_SOURCE_TEXT.includes(l) && !isArtifact(l))
+    .map(toSeg)
+    .filter((seg) => seg.text !== '');
   const forms = parseForms(rawHtml, slugFromPath(path));
   for (const f of forms) segments = replaceFormText(segments, f);
 
