@@ -135,7 +135,16 @@
     },
     {
       "kind": "p",
-      "text": "Posted in #FCCI, #FCCINation, #ReachTeachTransform, #Faith"
+      "text": "Posted in #FCCI, #FCCINation, #ReachTeachTransform, #Faith",
+      "parts": [
+        {
+          "text": "Posted in #FCCI, #FCCINation, #ReachTeachTransform,"
+        },
+        {
+          "text": "#Faith",
+          "href": "/blog/tag/faith"
+        }
+      ]
     },
     {
       "kind": "h3",
@@ -143,7 +152,8 @@
     },
     {
       "kind": "p",
-      "text": "Unlocking the Power of Biblical Meditation: A Path to Spiritual Growth"
+      "text": "Unlocking the Power of Biblical Meditation: A Path to Spiritual Growth",
+      "href": "/blog/2025/10/25/unlocking-the-power-of-biblical-meditation-a-path-to-spiritual-growth"
     },
     {
       "kind": "p",

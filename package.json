@@ -8,9 +8,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "dev:worker": "astro build && wrangler dev --port 8788",
-    "test": "vitest run",
+    "test": "npm run build && vitest run",
     "test:e2e": "playwright test",
-    "import": "node scripts/import-content.mjs"
+    "import": "node scripts/import-content.mjs",
+    "test:fast": "vitest run"
   },
   "type": "module",
   "devDependencies": {

@@ -148,3 +148,31 @@ it('captures the form success message and subject from the church\'s form settin
   expect(form.successText).toBe('Thank you for contacting us! We will respond shortly.');
   expect(form.subject).toBe('Prayer Request');
 });
+
+it('gives repeated link labels their own targets, in order', () => {
+  const p = parseSourcePage(src('connect-groups'));
+  const learn = p.segments.filter((s) => s.text === 'Learn More').map((s) => s.href);
+  expect(learn).toEqual([
+    'https://faithchristiancenterinte.subspla.sh/link/groups/9acbe343-f6f4-4d1a-a7ef-52be34f3f4c4',
+    'https://faithchristiancenterinte.subspla.sh/link/groups/7b0dd469-ecff-4e6c-a5ad-718014d100a7',
+    'https://faithchristiancenterinte.subspla.sh/link/groups/b4baf531-8f1e-4849-9628-3bec4593e248',
+    'https://faithchristiancenterinte.subspla.sh/link/groups/f98aded0-6615-4e0a-9ebe-a4a9f3997822',
+  ]);
+});
+
+it('splits a line made of several button labels into its links, keeping the text', () => {
+  const p = parseSourcePage(src('home-v2'));
+  const line = p.segments.find((s) => s.text === 'Read More Mission & Vision');
+  expect(line.parts).toEqual([
+    { text: 'Read More', href: '/about' },
+    { text: 'Mission & Vision', href: '/mission-vision' },
+  ]);
+  const mixed = p.segments.find((s) => s.text === 'Sundays at 10:00 AM Plan Your Visit');
+  expect(mixed.parts).toEqual([{ text: 'Sundays at 10:00 AM' }, { text: 'Plan Your Visit', href: '/im-new' }]);
+});
+
+it('links a title whose link label spans the title and the line below it', () => {
+  const p = parseSourcePage(src('media_live'));
+  const t = p.segments.find((s) => s.text === 'All for His Glory! - Part 7');
+  expect(t.href).toBe('/media/cmtf8ws/all-for-his-glory-part-7');
+});

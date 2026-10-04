@@ -27,7 +27,17 @@
     },
     {
       "kind": "p",
-      "text": "Plan Your Visit Watch Live"
+      "text": "Plan Your Visit Watch Live",
+      "parts": [
+        {
+          "text": "Plan Your Visit",
+          "href": "https://www.fcci.life/im-new"
+        },
+        {
+          "text": "Watch Live",
+          "href": "/media/live"
+        }
+      ]
     },
     {
       "kind": "h3",
@@ -39,7 +49,16 @@
     },
     {
       "kind": "p",
-      "text": "Sundays at 10:00 AM Plan Your Visit"
+      "text": "Sundays at 10:00 AM Plan Your Visit",
+      "parts": [
+        {
+          "text": "Sundays at 10:00 AM"
+        },
+        {
+          "text": "Plan Your Visit",
+          "href": "https://www.fcci.life/im-new"
+        }
+      ]
     },
     {
       "kind": "h3",
@@ -96,7 +115,17 @@
     },
     {
       "kind": "p",
-      "text": "Read More Mission & Vision"
+      "text": "Read More Mission & Vision",
+      "parts": [
+        {
+          "text": "Read More",
+          "href": "https://www.fcci.life/about"
+        },
+        {
+          "text": "Mission & Vision",
+          "href": "https://www.fcci.life/mission-vision"
+        }
+      ]
     },
     {
       "kind": "p",
@@ -187,7 +216,17 @@
     },
     {
       "kind": "p",
-      "text": "Give Online Ways to Give"
+      "text": "Give Online Ways to Give",
+      "parts": [
+        {
+          "text": "Give Online",
+          "href": "/give"
+        },
+        {
+          "text": "Ways to Give",
+          "href": "/give"
+        }
+      ]
     },
     {
       "kind": "p",

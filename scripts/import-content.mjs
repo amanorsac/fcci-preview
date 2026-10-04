@@ -56,7 +56,11 @@ export function importAll({ srcDir, outDir, formsOut, chromeOut = join(outDir, '
     const path = href.split('#')[0] || '/';
     return known.has(path) ? href : SITE_ORIGIN + href;
   };
-  const fixSeg = (seg) => (seg.href ? { ...seg, href: fixHref(seg.href) } : seg);
+  const fixSeg = (seg) => ({
+    ...seg,
+    ...(seg.href ? { href: fixHref(seg.href) } : {}),
+    ...(seg.parts ? { parts: seg.parts.map((p) => (p.href ? { ...p, href: fixHref(p.href) } : p)) } : {}),
+  });
 
   for (const { stem, page: rawPage } of parsed) {
     const page = {

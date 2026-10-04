@@ -231,6 +231,26 @@ function replaceFormText(segments, form) {
   ];
 }
 
+// A captured line can hold several buttons side by side ("Read More
+// Mission & Vision"). Split it back into its link labels, from the end,
+// keeping any leading plain text. Returns null when it is not such a line.
+export function splitButtons(text, links) {
+  const labels = [...new Set(links.map((l) => l.label).filter((l) => l && l.length > 1))]
+    .sort((a, b) => b.length - a.length);
+  const parts = [];
+  let rest = text;
+  for (;;) {
+    const label = labels.find((l) => rest === l || rest.endsWith(' ' + l));
+    if (!label) break;
+    parts.unshift({ text: label, href: hrefFor(label, links) });
+    rest = rest === label ? '' : rest.slice(0, -label.length - 1);
+    if (!rest) break;
+  }
+  if (!parts.length || (parts.length === 1 && !rest)) return null;
+  if (rest) parts.unshift({ text: rest });
+  return parts;
+}
+
 export function parseSourcePage(md, rawHtml) {
   const lines = md.split(/\r?\n/);
   const title = (lines[0] || '').replace(/^# /, '').trim();
@@ -259,12 +279,38 @@ export function parseSourcePage(md, rawHtml) {
     const href = hrefFor(s.text, links);
     return href && href !== path ? { ...s, href } : s;
   };
+  // A label that links to several different places ("Learn More" on each
+  // card) takes its targets in order. Earlier extra links of the same label
+  // belong to the header, so the body uses the last N of them.
+  const seen = new Map();
+  const bodyLines = [...body, ...extraFooter];
+  const toBodySeg = (l) => {
+    const s = toSeg(l);
+    if (!s.href) {
+      const parts = s.kind === 'p' ? splitButtons(s.text, links) : null;
+      return parts ? { ...s, parts } : s;
+    }
+    const targets = links.filter((x) => x.label === s.text).map((x) => localHref(x.href));
+    if (new Set(targets).size < 2) return s;
+    const count = bodyLines.filter((x) => toSegment(x).text === s.text).length;
+    const k = seen.get(s.text) ?? 0;
+    seen.set(s.text, k + 1);
+    const href = targets[Math.max(0, targets.length - count) + k];
+    return href && href !== path ? { ...s, href } : s;
+  };
   const isArtifact = (l) => /^#{1,3}$/.test(l);
 
   let segments = [...body, ...extraFooter]
     .filter((l) => !DROPPED_SOURCE_TEXT.includes(l) && !isArtifact(l))
-    .map(toSeg)
+    .map(toBodySeg)
     .filter((seg) => seg.text !== '');
+  // Card-style links whose label is "title + next line" link the title.
+  for (let i = 0; i + 1 < segments.length; i++) {
+    const [x, y] = [segments[i], segments[i + 1]];
+    if (x.href || x.kind !== 'p' || y.kind !== 'p') continue;
+    const hit = links.find((l) => l.label === `${x.text} ${y.text}`);
+    if (hit) segments[i] = { ...x, href: localHref(hit.href) };
+  }
   const forms = parseForms(rawHtml, slugFromPath(path));
   for (const f of forms) segments = replaceFormText(segments, f);
 
