@@ -1,0 +1,46 @@
+- https://www.fcci.life/scriptures — "Faith Christian Center International - Scriptures" -> pages/scriptures.md
+- https://www.fcci.life/home-v2 — "Faith Christian Center International - Home V2" -> pages/home-v2.md
+- https://www.fcci.life/testimonies — "Faith Christian Center International - Testimonies" -> pages/testimonies.md
+- https://www.fcci.life/connect-card — "Faith Christian Center International - Connect Card" -> pages/connect-card.md
+- https://www.fcci.life/wop — "Faith Christian Center International - wop" -> pages/wop.md
+- https://www.fcci.life/home-app — "Faith Christian Center International - Home app" -> pages/home-app.md
+- https://www.fcci.life/messaging — "Faith Christian Center International - Messaging" -> pages/messaging.md
+- https://www.fcci.life/watch — "Faith Christian Center International - Watch" -> pages/watch.md
+- https://www.fcci.life/students — "Faith Christian Center International - Students" -> pages/students.md
+- https://www.fcci.life/mission-and-vision — "Faith Christian Center International - Mission and Vision" -> pages/mission-and-vision.md
+- https://www.fcci.life/what-we-believe — "Faith Christian Center International - What We Believe" -> pages/what-we-believe.md
+- https://www.fcci.life/leadership — "Faith Christian Center International - Leadership" -> pages/leadership.md
+- https://www.fcci.life/kidz-amp-youth — "Faith Christian Center International - Kidz & Youth" -> pages/kidz-amp-youth.md
+- https://www.fcci.life/our-story — "Faith Christian Center International - Our Story" -> pages/our-story.md
+- https://www.fcci.life/contact — "Faith Christian Center International - Contact" -> pages/contact.md
+- https://www.fcci.life/calendar — "Faith Christian Center International - Calendar" -> pages/calendar.md
+- https://www.fcci.life/preschool — "Faith Christian Center International - Preschool" -> pages/preschool.md
+- https://www.fcci.life/connect-groups — "Faith Christian Center International - Connect Groups" -> pages/connect-groups.md
+- https://www.fcci.life/growth-track — "Faith Christian Center International - Growth Track" -> pages/growth-track.md
+- https://www.fcci.life/men — "Faith Christian Center International - Men" -> pages/men.md
+- https://www.fcci.life/jesus — "Faith Christian Center International - Jesus" -> pages/jesus.md
+- https://www.fcci.life/women — "Faith Christian Center International - Women" -> pages/women.md
+- https://www.fcci.life/pastor-s-blog — "Faith Christian Center International - Pastor's Blog" -> pages/pastor-s-blog.md
+- https://www.fcci.life/i-m-new — "Faith Christian Center International - I'm New" -> pages/i-m-new.md
+- https://www.fcci.life/sermons — "Faith Christian Center International - Sermons" -> pages/sermons.md
+- https://www.fcci.life/give — "Faith Christian Center International - Give" -> pages/give.md
+- https://www.fcci.life/loveandserve — "Faith Christian Center International - LoveandServe" -> pages/loveandserve.md
+- https://www.fcci.life/fasting — "Faith Christian Center International - fasting" -> pages/fasting.md
+- https://www.fcci.life/blog — "Faith Christian Center International - Blog" -> pages/blog.md
+- https://www.fcci.life/easter — "Faith Christian Center International - Easter" -> pages/easter.md
+- https://www.fcci.life/sanctuarytap — "Faith Christian Center International - SanctuaryTap" -> pages/sanctuarytap.md
+- https://www.fcci.life/volunteer-signup — "Faith Christian Center International - Volunteer Signup" -> pages/volunteer-signup.md
+- https://www.fcci.life/small-groups-less-than-20-groups — "Faith Christian Center International - Small Groups (Less than 20 groups)" -> pages/small-groups-less-than-20-groups.md
+- https://www.fcci.life/small-groups-20-groups — "Faith Christian Center International - Small Groups (20+ groups)" -> pages/small-groups-20-groups.md
+- https://www.fcci.life/prayer-request — "Faith Christian Center International - Prayer Request" -> pages/prayer-request.md
+- https://www.fcci.life/event-signup — "Faith Christian Center International - Event Signup" -> pages/event-signup.md
+- https://www.fcci.life/bible-reading-group-signup — "Faith Christian Center International - Bible Reading Group Signup" -> pages/bible-reading-group-signup.md
+- https://www.fcci.life/baptism-signup — "Faith Christian Center International - Baptism Signup" -> pages/baptism-signup.md
+- https://www.fcci.life/blog/2025/10/25/unlocking-the-power-of-biblical-meditation-a-path-to-spiritual-growth — "Unlocking the Power of Biblical Meditation: A Path to Spiritual Growth | Faith Christian Center International" -> pages/blog_2025_10_25_unlocking-the-power-of-biblical-meditation-a-path-to-spiritual-growth.md
+- https://www.fcci.life/ — "Faith Christian Center International - Home" -> pages/home.md
+- https://www.fcci.life/media/live — "Live | Faith Christian Center International" -> pages/media_live.md
+- https://www.fcci.life/watch-live — "Faith Christian Center International - Watch Live" -> pages/watch-live.md
+- https://www.fcci.life/blog/tag/fcci — "Faith Christian Center International - Blog" -> pages/blog_tag_fcci.md
+- https://www.fcci.life/blog/tag/fccination — "Faith Christian Center International - Blog" -> pages/blog_tag_fccination.md
+- https://www.fcci.life/blog/tag/reachteachtransform — "Faith Christian Center International - Blog" -> pages/blog_tag_reachteachtransform.md
+- https://www.fcci.life/blog/tag/faith — "Faith Christian Center International - Blog" -> pages/blog_tag_faith.md
