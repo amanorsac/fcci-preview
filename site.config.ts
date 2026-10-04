@@ -74,6 +74,13 @@ export const site = {
     giveEmbed: 'https://subsplash.com/u/-BPM5XF/give?embed=true',
   },
   liveCalendarUrl: 'https://www.fcci.life/calendar',
+  // Sections linking to these paths get the page's media embed.
+  mediaLinkPaths: ['/sermons', '/media'],
+  home: {
+    // Church photos (from its own home-v2 page) for the three pillar panels.
+    heroImage: '23030723',
+    panelImages: ['24975047', '23035221', '19289338'],
+  },
 
   preview: { enabled: true, text: 'Preview of a redesigned fcci.life by CTSD' },
   ui: { skipLink: 'Skip to content' },

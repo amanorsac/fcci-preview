@@ -74,7 +74,7 @@ h1, h2, h3 { margin: 0; line-height: 1.05; }
 .tone-light .btn-ghost:hover, .tone-light-2 .btn-ghost:hover { background: rgba(0, 0, 0, .05); }
 
 /* Links in reading text: underline, accent-dark for AA on light. */
-.prose a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: .2em; text-decoration-thickness: 2px; }
+.prose a:not(.btn) { color: inherit; text-decoration-color: var(--accent); text-underline-offset: .2em; text-decoration-thickness: 2px; }
 
 /* Focus: visible on dark and light. */
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; box-shadow: 0 0 0 6px rgba(17, 17, 17, .85); }

@@ -1,0 +1,30 @@
+---
+// Shows the shared footer's location and service-time columns as a feature band.
+interface Segment { kind: string; text: string }
+interface Props { segments: Segment[]; id?: string; columns: number }
+const { segments, id, columns } = Astro.props;
+const cols: { heading: string; lines: string[] }[] = [];
+for (const s of segments) {
+  if (s.kind === 'h3') cols.push({ heading: s.text, lines: [] });
+  else cols.at(-1)?.lines.push(s.text);
+}
+const shown = cols.slice(0, columns);
+---
+<section class="times tone-dark-2" id={id}>
+  <div class="container grid">
+    {shown.map((c) => (
+      <div class="col reveal">
+        <h2 class="eyebrow">{c.heading}</h2>
+        {c.lines.map((l, i) => <p class:list={{ big: i === 0 || /\d{1,2}:\d{2}/.test(l) }}>{l}</p>)}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .times { padding-block: clamp(56px, 8vw, 104px); }
+  .grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .col h2 { color: var(--accent); margin: 0 0 16px; }
+  .col p { margin: 0 0 6px; color: rgba(255,255,255,.85); }
+  .col p.big { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; color: #fff; margin-bottom: 10px; }
+</style>

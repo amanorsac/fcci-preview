@@ -39,8 +39,8 @@ const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = tr
   .hero-compact { min-height: clamp(320px, 48vh, 520px); }
   .hero-tall { min-height: clamp(460px, 72vh, 760px); }
   .hero-full { min-height: calc(100svh - var(--header-h)); }
-  .hero :global(.hero-img), .hero :global(picture) { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .hero :global(.hero-img) { object-fit: cover; }
+  .hero > :global(picture), .hero > :global(.hero-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero :global(.hero-img) { width: 100%; height: 100%; object-fit: cover; }
   /* Directional scrim keeps headline contrast above 4.5:1 on any photo. */
   .scrim {
     position: absolute; inset: 0;
@@ -48,6 +48,7 @@ const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = tr
       linear-gradient(90deg, rgba(17,17,17,.88) 0%, rgba(17,17,17,.55) 55%, rgba(17,17,17,.25) 100%),
       linear-gradient(0deg, rgba(17,17,17,.75) 0%, rgba(17,17,17,0) 60%);
   }
+  @media (max-width: 699px) { .scrim { background: linear-gradient(0deg, rgba(17,17,17,.92) 0%, rgba(17,17,17,.72) 60%, rgba(17,17,17,.6) 100%); } }
   .hero-inner { position: relative; padding-block: clamp(56px, 10vw, 120px) clamp(40px, 7vw, 88px); }
   .hero h1 { font-size: clamp(3rem, 9vw, 7.5rem); line-height: .92; max-width: 16ch; color: #fff; }
   .eyebrow { color: var(--accent); margin: 0 0 14px; }

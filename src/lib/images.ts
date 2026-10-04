@@ -36,3 +36,7 @@ export function pageImages(images: { src: string }[], skipIds: string[] = []): I
   }
   return out;
 }
+
+export function imageById(id: string): ImageMetadata | undefined {
+  return byId.get(id);
+}
