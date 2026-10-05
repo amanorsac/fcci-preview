@@ -79,6 +79,11 @@ export const site = {
   headerCtas: [
     { label: 'Plan Your Visit', href: '/i-m-new', kind: 'primary' },
   ],
+  // Children's ministry page: which church lines are age groups, and their photos.
+  kids: {
+    agePrefix: 'FAITH KIDZ ',
+    ageSlots: ['kids.nursery', 'kids.toddlers', 'kids.preschool', 'kids.church'],
+  },
   // Dream Team cards that have a matching photo slot.
   teamSlots: {
     'Altar Care/Prayer Team': 'team.prayer',

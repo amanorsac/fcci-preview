@@ -4,6 +4,7 @@ import Standard from '../layouts/Standard.astro';
 import Ministry from '../layouts/Ministry.astro';
 import Home from '../layouts/Home.astro';
 import HomeV2 from '../layouts/HomeV2.astro';
+import Kids from '../layouts/Kids.astro';
 import Media from '../layouts/Media.astro';
 import Blog from '../layouts/Blog.astro';
 
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 // Layouts still to be built fall back to Standard.
-const LAYOUTS: Record<string, any> = { standard: Standard, ministry: Ministry, home: Home, media: Media, blog: Blog };
+const LAYOUTS: Record<string, any> = { standard: Standard, ministry: Ministry, home: Home, media: Media, blog: Blog, kids: Kids };
 const { page } = Astro.props;
 const Layout = page.slug === 'home' ? HomeV2 : LAYOUTS[page.layout] ?? Standard;
 ---

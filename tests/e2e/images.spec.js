@@ -8,7 +8,7 @@ test('no page loads images from the old host, and every img has alt', async ({ p
   for (const path of paths) {
     await page.goto(path);
     const imgs = await page.locator('img').evaluateAll((els) =>
-      els.map((e) => ({ src: e.currentSrc || e.src, alt: e.getAttribute('alt'), hidden: !!e.closest('[aria-hidden="true"]'), decorative: e.closest('.hero, .pillar, .media-hero, .thumb, .hero-media, .tile, .pillar-media, .kids-media, .dream-media, .team-media, .media, .event-card') !== null, inNamedLink: !!e.closest('a[aria-label]') }))
+      els.map((e) => ({ src: e.currentSrc || e.src, alt: e.getAttribute('alt'), hidden: !!e.closest('[aria-hidden="true"]'), decorative: e.closest('.hero, .pillar, .media-hero, .thumb, .hero-media, .tile, .pillar-media, .kids-media, .dream-media, .team-media, .media, .event-card, .age-media, .split-media') !== null, inNamedLink: !!e.closest('a[aria-label]') }))
     );
     for (const i of imgs) {
       expect(i.src, path).not.toContain('snappages.site');

@@ -26,7 +26,7 @@ const pages = defineCollection({
     slug: z.string(),
     title: z.string(),
     description: z.string(),
-    layout: z.enum(['home', 'standard', 'ministry', 'media', 'blog', 'form']),
+    layout: z.enum(['home', 'standard', 'ministry', 'kids', 'media', 'blog', 'form']),
     segments: z.array(segment),
     navChrome: z.array(z.string()),
     footerChrome: z.array(segment),

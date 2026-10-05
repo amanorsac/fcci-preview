@@ -17,7 +17,8 @@ export const LAYOUT_BY_SLUG = {
     'easter', 'wop', 'messaging', 'sanctuarytap', 'i-m-new', 'contact', 'testimonies',
     'pastor-s-blog',
   ]),
-  ...group('ministry', ['kidz-amp-youth', 'men', 'women', 'students', 'preschool']),
+  ...group('kids', ['kidz-amp-youth']),
+  ...group('ministry', ['men', 'women', 'students', 'preschool']),
   ...group('media', ['sermons', 'media_live', 'watch-live', 'watch', 'give', 'calendar']),
   ...group('blog', [
     'blog',

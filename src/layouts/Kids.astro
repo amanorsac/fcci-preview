@@ -1,0 +1,147 @@
+---
+// The children's ministry page: the church's own kids, youth and college text,
+// laid out as a bright spotlight with draft "first Sunday" and safety sections.
+import Base from './Base.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import { sections, type Segment } from '../lib/page';
+import { slot } from '../lib/slots';
+import { draft } from '../lib/draft';
+import { site } from '../../site.config';
+
+const { page } = Astro.props;
+const d = (k: string) => draft('kids', k);
+const groups = sections(page.segments as Segment[]);
+const [kidsGroup, ...rest] = groups;
+
+// Kids section: heading, schedule line, description, then the age groups.
+const title = kidsGroup[0].text;
+const kidsLines = kidsGroup.slice(1);
+// Age groups are the short lines that start with the ministry name.
+const ages = kidsLines.filter((s) => s.text.startsWith(site.kids.agePrefix) && s.text.length < 80);
+const intro = kidsLines.filter((s) => !ages.includes(s));
+const schedule = intro.find((s) => s.text.length < 30)?.text;
+const lead = intro.filter((s) => s.text !== schedule).map((s) => s.text);
+
+// Youth and college: the remaining section, split where a short ministry name
+// line is followed by a short schedule line.
+const youth = rest[0] ?? [];
+const collegeAt = youth.findIndex((s, i) => i > 2 && s.kind === 'p' && s.text.length < 40 && youth[i + 1]?.text.length < 25);
+const youthPart = collegeAt === -1 ? youth : youth.slice(0, collegeAt);
+const collegePart = collegeAt === -1 ? [] : youth.slice(collegeAt);
+const others = rest.slice(1);
+const plan = site.headerCtas[0];
+---
+<Base title={page.title} description={page.description} currentPath={page.path}>
+  <section class="kids-hero" data-section="hero">
+    <div class="container hero-grid">
+      <div>
+        {schedule && <p class="pill">{schedule}</p>}
+        <h1 class="display-italic">{title}</h1>
+        {lead.map((l) => <p class="lead">{l}</p>)}
+      </div>
+      <div class="hero-media"><ImageSlot pair={slot('kids.hero')} sizes="(min-width: 960px) 46vw, 100vw" eager class="hero-img" /></div>
+    </div>
+  </section>
+
+  <section class="band tone-light" data-section="ages">
+    <div class="container">
+      <h2 class="display sec-title">{d('ages.title')}</h2>
+      <ul class="ages" role="list">
+        {ages.map((a, i) => (
+          <li class="age reveal" data-age>
+            <div class="age-media"><ImageSlot pair={slot(site.kids.ageSlots[i] ?? 'kids.hero')} sizes="(min-width: 900px) 25vw, 100vw" widths={[400, 800]} /></div>
+            <h3 class="age-name">{a.text}</h3>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band tone-light-2" data-section="first-sunday">
+    <div class="container split">
+      <div class="split-media reveal"><ImageSlot pair={slot('kids.checkin')} sizes="(min-width: 900px) 45vw, 100vw" widths={[480, 800, 1200]} /></div>
+      <div>
+        <h2 class="display sec-title">{d('first.title')}</h2>
+        <ol class="steps" role="list">
+          {[1, 2, 3].map((n) => <li><span class="n" aria-hidden="true">{n}</span><span>{d(`first.${n}`)}</span></li>)}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tone-light" data-section="safety">
+    <div class="container">
+      <h2 class="display sec-title">{d('safety.title')}</h2>
+      <ul class="safety" role="list">
+        {[1, 2, 3].map((n) => <li class="reveal"><span class="check" aria-hidden="true">✓</span><p>{d(`safety.${n}`)}</p></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band tone-light-2" data-section="youth">
+    <div class="container split">
+      <div class="reveal">
+        {youthPart.map((s, i) => i === 0
+          ? <h2 class="display sec-title">{s.text}</h2>
+          : s.text.length < 25 ? <p class="pill">{s.text}</p> : <p>{s.text}</p>)}
+      </div>
+      <div class="split-media reveal"><ImageSlot pair={slot('tile.youth')} sizes="(min-width: 900px) 45vw, 100vw" widths={[480, 800, 1200]} /></div>
+    </div>
+  </section>
+
+  {collegePart.length > 0 && (
+    <section class="band tone-light" data-section="college">
+      <div class="container split">
+        <div class="split-media reveal"><ImageSlot pair={slot('next-steps')} sizes="(min-width: 900px) 45vw, 100vw" widths={[480, 800, 1200]} /></div>
+        <div class="reveal">
+          {collegePart.map((s, i) => i === 0
+            ? <h2 class="display sec-title">{s.text}</h2>
+            : s.text.length < 25 ? <p class="pill">{s.text}</p> : <p>{s.text}</p>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {others.map((g) => (
+    <section class="band tone-light"><div class="container read">{g.map((s) => <p>{s.text}</p>)}</div></section>
+  ))}
+
+  <section class="band visit" data-section="visit">
+    <div class="container center">
+      <h2 class="display sec-title">{d('visit.title')}</h2>
+      <p>{d('visit.text')}</p>
+      <a class="btn btn-dark" href={plan.href}>{plan.label}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kids-hero { background: var(--grad); }
+  .hero-grid { display: grid; gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(56px, 9vw, 120px); }
+  @media (min-width: 960px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
+  .kids-hero h1 { font-size: clamp(3.6rem, 11vw, 8rem); line-height: .95; margin: 14px 0 18px; }
+  .lead { font-size: 1.12rem; max-width: 52ch; }
+  .pill { display: inline-block; padding: 8px 16px; border-radius: 999px; background: #fff; font-weight: 900; margin: 0 0 12px; }
+  .hero-media :global(.hero-img) { width: 100%; height: auto; aspect-ratio: 4 / 3.2; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 6px solid #fff; }
+  .band { padding-block: clamp(56px, 8vw, 104px); }
+  .sec-title { font-size: clamp(2.1rem, 4.6vw, 3.2rem); margin: 0 0 24px; }
+  .ages { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .age { background: #fff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border-top: 6px solid transparent; border-image: var(--grad) 1; }
+  .age-media { aspect-ratio: 4 / 3; overflow: hidden; }
+  .age-media :global(picture), .age-media :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .age-name { font: 900 1.05rem/1.35 var(--font-body); margin: 0; padding: 18px 20px 22px; }
+  .split { display: grid; gap: clamp(28px, 5vw, 64px); align-items: center; }
+  @media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; } }
+  .split-media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow); }
+  .split-media :global(picture), .split-media :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .steps li { display: flex; gap: 14px; align-items: flex-start; font-size: 1.08rem; }
+  .n { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--grad); font-weight: 900; }
+  .safety { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .safety li { display: flex; gap: 14px; padding: 24px; border-radius: var(--radius-lg); background: var(--paper-2); }
+  .safety p { margin: 0; font-weight: 700; }
+  .check { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-weight: 900; }
+  .visit { background: var(--grad); }
+  .center { text-align: center; }
+  :global(.btn-dark) { background: var(--ink); color: #fff; }
+</style>

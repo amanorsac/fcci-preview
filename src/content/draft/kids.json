@@ -1,0 +1,16 @@
+{
+  "page": "/kidz-amp-youth (FAITH KIDZ)",
+  "items": [
+    { "key": "ages.title", "text": "A class for every age" },
+    { "key": "first.title", "text": "Your first Sunday" },
+    { "key": "first.1", "text": "Arrive a few minutes early and look for the FAITH KIDZ check-in." },
+    { "key": "first.2", "text": "Our team will walk you and your child to the right classroom." },
+    { "key": "first.3", "text": "After the service, pick your child up from the same room." },
+    { "key": "safety.title", "text": "Safe, clean and caring" },
+    { "key": "safety.1", "text": "Every child is checked in and checked out by our FAITH KIDZ team." },
+    { "key": "safety.2", "text": "Rooms are cleaned and prepared before every service." },
+    { "key": "safety.3", "text": "Our volunteers love kids and are here to care for yours." },
+    { "key": "visit.title", "text": "Bring your kids this Sunday." },
+    { "key": "visit.text", "text": "We can't wait to meet your family." }
+  ]
+}

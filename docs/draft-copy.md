@@ -57,6 +57,22 @@ edit or remove each line. To change one, edit the matching file in
 | `home.dream.text` | Every Sunday is made possible by people who use their gifts to serve. There's a place for you on the team. |
 | `home.next.title` | Take your next step |
 
+## /kidz-amp-youth (FAITH KIDZ)
+
+| Where | Draft text |
+|---|---|
+| `kids.ages.title` | A class for every age |
+| `kids.first.title` | Your first Sunday |
+| `kids.first.1` | Arrive a few minutes early and look for the FAITH KIDZ check-in. |
+| `kids.first.2` | Our team will walk you and your child to the right classroom. |
+| `kids.first.3` | After the service, pick your child up from the same room. |
+| `kids.safety.title` | Safe, clean and caring |
+| `kids.safety.1` | Every child is checked in and checked out by our FAITH KIDZ team. |
+| `kids.safety.2` | Rooms are cleaned and prepared before every service. |
+| `kids.safety.3` | Our volunteers love kids and are here to care for yours. |
+| `kids.visit.title` | Bring your kids this Sunday. |
+| `kids.visit.text` | We can't wait to meet your family. |
+
 ## /ministries
 
 | Where | Draft text |
