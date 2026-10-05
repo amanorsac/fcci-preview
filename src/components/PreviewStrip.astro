@@ -1,0 +1,35 @@
+---
+interface Props { text: string }
+const { text } = Astro.props;
+---
+<div class="preview-strip" data-preview-strip>
+  <p>{text}</p>
+  <button type="button" aria-label="Dismiss" data-dismiss>
+    <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M2 2l10 10M12 2 2 12" stroke="currentColor" stroke-width="2" /></svg>
+  </button>
+</div>
+
+<style>
+  .preview-strip {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 6px 48px; position: relative;
+    background: var(--accent); color: var(--ink);
+    font: 600 .8rem/1.4 var(--font-body); text-align: center;
+  }
+  .preview-strip p { margin: 0; }
+  .preview-strip button {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: inherit; cursor: pointer;
+    display: grid; place-items: center;
+  }
+  .preview-strip button:hover { background: rgba(0,0,0,.1); }
+</style>
+
+<script>
+  const strip = document.querySelector('[data-preview-strip]');
+  try { if (sessionStorage.getItem('preview-dismissed') === '1') strip?.remove(); } catch {}
+  strip?.querySelector('[data-dismiss]')?.addEventListener('click', () => {
+    strip.remove();
+    try { sessionStorage.setItem('preview-dismissed', '1'); } catch {}
+  });
+</script>

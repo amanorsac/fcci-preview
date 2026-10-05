@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Standard from '../layouts/Standard.astro';
+import Ministry from '../layouts/Ministry.astro';
+import Home from '../layouts/Home.astro';
+import Media from '../layouts/Media.astro';
+import Blog from '../layouts/Blog.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((p) => ({
+    params: { path: p.data.path === '/' ? undefined : p.data.path.replace(/^\//, '') },
+    props: { page: p.data },
+  }));
+}
+
+// Layouts still to be built fall back to Standard.
+const LAYOUTS: Record<string, any> = { standard: Standard, ministry: Ministry, home: Home, media: Media, blog: Blog };
+const { page } = Astro.props;
+const Layout = LAYOUTS[page.layout] ?? Standard;
+---
+<Layout page={page} />

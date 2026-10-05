@@ -1,0 +1,118 @@
+---
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from './Base.astro';
+import Blocks from '../components/Blocks.astro';
+import { pageImages, altFor } from '../lib/images';
+import { site } from '../../site.config';
+import type { Segment } from '../lib/page';
+
+const { page } = Astro.props;
+const DATE = /^[A-Z][a-z]+ \d{1,2}(st|nd|rd|th)?, \d{4}$/;
+const BYLINE = /^by /;
+
+const all = await getCollection('pages');
+const postFor = (title: string) =>
+  all.find((p) => p.data.layout === 'blog' && p.data.segments[0]?.kind === 'h1' && p.data.segments[0].text === title)?.data;
+
+const segs: Segment[] = page.segments;
+const isPost = segs[0]?.kind === 'h1' && DATE.test(segs[1]?.text ?? '');
+const images = pageImages(page.images);
+
+// List pages: an optional h1, then cards of title / date / excerpt / byline.
+const blogLabel = site.nav.find((n) => n.href === '/blog')?.label ?? '';
+const listHeading = segs[0]?.kind === 'h1' ? segs[0].text : blogLabel;
+const listBody = segs[0]?.kind === 'h1' ? segs.slice(1) : segs;
+const cards: { title: string; date?: string; excerpt?: string; byline?: string; href?: string }[] = [];
+if (!isPost) {
+  for (let i = 0; i < listBody.length; i++) {
+    if (DATE.test(listBody[i + 1]?.text ?? '')) {
+      const card: any = { title: listBody[i].text, date: listBody[i + 1].text };
+      i += 2;
+      if (listBody[i] && !BYLINE.test(listBody[i].text)) { card.excerpt = listBody[i].text; i += 1; }
+      if (listBody[i] && BYLINE.test(listBody[i].text)) { card.byline = listBody[i].text; } else { i -= 1; }
+      card.href = postFor(card.title)?.path;
+      cards.push(card);
+    }
+  }
+}
+
+// Post pages: title, then date and byline lines, then the article.
+let metaEnd = 1;
+while (metaEnd < segs.length && (DATE.test(segs[metaEnd].text) || BYLINE.test(segs[metaEnd].text))) metaEnd += 1;
+const meta = segs.slice(1, metaEnd).map((s) => s.text);
+const article = segs.slice(metaEnd);
+---
+<Base title={page.title} description={page.description} currentPath={isPost ? '/blog' : page.path}>
+  {isPost ? (
+    <article>
+      <header class="post-head tone-dark">
+        <div class="container narrow">
+          {meta.map((m, i) => <p class:list={['meta', { accent: i === 0 }]}>{m}</p>)}
+          <h1 class="display">{segs[0].text}</h1>
+        </div>
+      </header>
+      {images[0] && (
+        <div class="container narrow cover-wrap">
+          <Picture src={images[0]} alt={altFor(images[0])} formats={['avif', 'webp']} widths={[640, 1024, 1600]} sizes="(min-width: 900px) 860px, 100vw" class="cover" loading="eager" fetchpriority="high" />
+        </div>
+      )}
+      <div class="container narrow article">
+        <Blocks segments={article} forms={page.forms} pagePath={page.path} />
+      </div>
+    </article>
+  ) : (
+    <>
+      <header class="list-head tone-dark">
+        <div class="container"><h1 class="display">{listHeading}</h1></div>
+      </header>
+      <section class="tone-light-2 list">
+        <div class="container">
+          <ul class="grid" role="list">
+            {cards.map((c) => (
+              <li class="card reveal">
+                {images[0] && (
+                  <a href={c.href} tabindex="-1" aria-hidden="true" class="thumb">
+                    <Picture src={images[0]} alt="" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 900px) 33vw, 100vw" loading="lazy" />
+                  </a>
+                )}
+                <div class="card-body">
+                  {c.date && <p class="date">{c.date}</p>}
+                  <h2 class="title">{c.href ? <a href={c.href}>{c.title}</a> : c.title}</h2>
+                  {c.excerpt && <p class="excerpt">{c.excerpt}</p>}
+                  {c.byline && <p class="byline">{c.byline}</p>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
+  )}
+</Base>
+
+<style>
+  .narrow { max-width: 860px; }
+  .post-head { padding-block: clamp(56px, 9vw, 112px) clamp(88px, 12vw, 160px); }
+  .post-head h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); line-height: .98; color: #fff; margin-top: 12px; }
+  .meta { margin: 0; color: rgba(255, 255, 255, .78); font-weight: 600; }
+  .meta.accent { color: var(--accent); letter-spacing: .04em; }
+  .cover-wrap { margin-top: clamp(-120px, -9vw, -64px); }
+  .cover-wrap :global(img) { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow); aspect-ratio: 16 / 9; object-fit: cover; }
+  .article { padding-block: clamp(40px, 6vw, 72px) clamp(64px, 9vw, 120px); font-size: 1.12rem; }
+  .list-head { padding-block: clamp(56px, 9vw, 104px); }
+  .list-head h1 { font-size: clamp(3rem, 8vw, 6rem); color: #fff; }
+  .list { padding-block: clamp(48px, 7vw, 88px); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .card { background: var(--paper); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 14px 40px -24px rgba(0, 0, 0, .45); display: flex; flex-direction: column; }
+  .thumb :global(img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .5s var(--ease); }
+  .card:hover .thumb :global(img) { transform: scale(1.03); }
+  .thumb { overflow: hidden; display: block; }
+  .card-body { padding: 24px; }
+  .date { margin: 0 0 8px; color: color-mix(in srgb, var(--accent) 52%, black); font-weight: 700; font-size: .85rem; letter-spacing: .04em; }
+  .title { font: 700 1.25rem/1.3 var(--font-body); margin: 0 0 10px; }
+  .title a { text-decoration: none; }
+  .title a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+  .excerpt { margin: 0 0 12px; color: var(--gray); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .byline { margin: 0; font-weight: 600; font-size: .9rem; }
+</style>

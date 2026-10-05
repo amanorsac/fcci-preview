@@ -1,0 +1,88 @@
+{
+  "nav": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footer": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times",
+      "href": "/#service-times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "url": "https://www.fcci.life/students",
+  "path": "/students",
+  "slug": "students",
+  "title": "Faith Christian Center International - Students",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h1",
+      "text": "Students"
+    },
+    {
+      "kind": "h2",
+      "text": "Growing together."
+    },
+    {
+      "kind": "h3",
+      "text": "Whoever you are, wherever you're from, you are welcome here."
+    },
+    {
+      "kind": "p",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et."
+    },
+    {
+      "kind": "h2",
+      "text": "Sunday Mornings"
+    },
+    {
+      "kind": "h3",
+      "text": "9:30am-10:30am"
+    },
+    {
+      "kind": "p",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa."
+    },
+    {
+      "kind": "h3",
+      "text": "11am-12pm"
+    },
+    {
+      "kind": "p",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa."
+    },
+    {
+      "kind": "h2",
+      "text": "Small Groups"
+    },
+    {
+      "kind": "h3",
+      "text": "Get Connected. Go Deeper."
+    },
+    {
+      "kind": "p",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus accumsan nulla, non faucibus velit convallis et. Nulla tempus placerat massa."
+    },
+    {
+      "kind": "h2",
+      "text": "Contact Us"
+    },
+    {
+      "kind": "h3",
+      "text": "We'd love to hear from you. Fill out the form below to get started."
+    },
+    {
+      "kind": "form",
+      "formId": "students-1",
+      "text": ""
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "https://www.fcci.life/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "https://www.fcci.life/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact Us",
+      "href": "/students"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://assets2.snappages.site/global/assets/theme/church/students_01.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://assets2.snappages.site/global/assets/theme/church/students_02.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://assets2.snappages.site/global/assets/theme/church/students_03.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [
+    "<form class=\"sp-form\"><div class=\"sp-fieldset\" data-type=\"name\"><div class=\"sp-field-col\">"
+  ],
+  "forms": [
+    {
+      "id": "students-1",
+      "fields": [
+        {
+          "name": "f0",
+          "type": "text",
+          "label": "First Name",
+          "required": false
+        },
+        {
+          "name": "f1",
+          "type": "text",
+          "label": "Last Name",
+          "required": false
+        },
+        {
+          "name": "f2",
+          "type": "email",
+          "label": "Email",
+          "required": false
+        },
+        {
+          "name": "f3",
+          "type": "textarea",
+          "label": "Message",
+          "required": false
+        }
+      ],
+      "submitLabel": "Contact Us",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Contact Request"
+    }
+  ],
+  "layout": "ministry"
+}

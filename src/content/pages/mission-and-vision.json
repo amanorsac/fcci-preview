@@ -1,0 +1,270 @@
+{
+  "url": "https://www.fcci.life/mission-and-vision",
+  "path": "/mission-and-vision",
+  "slug": "mission-and-vision",
+  "title": "Faith Christian Center International - Mission and Vision",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h1",
+      "text": "Mission & Vision"
+    },
+    {
+      "kind": "h2",
+      "text": "Go therefore and make disciples..."
+    },
+    {
+      "kind": "p",
+      "text": "Faith Christian Center International is a thriving and dynamic community that provides a truly uplifting spiritual experience. Our environment is designed to inspire personal growth and meaningful connections with others. With a commitment to excellence, we create an atmosphere where attenders can feel a sense of belonging and acceptance. Our community is a place where you can connect with God and others. We offer a range of programs and events that cater to different interests and needs. Whether joining a small group, attending a worship service, or participating in a service project, there are numerous ways to get involved and contribute to the community."
+    },
+    {
+      "kind": "p",
+      "text": "Our backgrounds and experiences are diverse, but we all share a common goal: to grow in our faith and positively impact the world around us. We believe that every person has unique gifts and talents that can be used to make a difference, and we work to empower people to discover and fulfill their potential."
+    },
+    {
+      "kind": "p",
+      "text": "At Faith Christian Center International, you can expect to be a part of a community passionate about making a difference. We are committed to creating a safe and enjoyable space where you can feel supported and encouraged to pursue spiritual growth through the teaching of God's Word. Join us and experience the transformative power of faith and community!"
+    },
+    {
+      "kind": "h2",
+      "text": "The Mission"
+    },
+    {
+      "kind": "p",
+      "text": "The mission of Faith Center International is the same mission Jesus gave his followers: Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit. We fulfill this mission as we REACH people of all walks of life, TEACH the truth of God's Word and TRANSFORM lives with the love and power of God."
+    },
+    {
+      "kind": "h2",
+      "text": "The Vision"
+    },
+    {
+      "kind": "p",
+      "text": "The vision of Faith Christian Center International is to be a LARGE and GROWING body of believers, where people KNOW who they are in Christ, LIVE and WALK by faith, DISCOVER their purpose, MAXIMIZE their God given potential, ENJOY the abundant life, MODEL the Great Commission in the community and SUPPORT the Great Commission around the world."
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "https://www.fcci.life/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "https://www.fcci.life/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [],
+  "forms": [],
+  "layout": "standard"
+}

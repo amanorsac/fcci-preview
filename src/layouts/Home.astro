@@ -1,0 +1,115 @@
+---
+import { Picture } from 'astro:assets';
+import Base from './Base.astro';
+import Hero from '../components/Hero.astro';
+import Blocks from '../components/Blocks.astro';
+import SubsplashEmbed from '../components/SubsplashEmbed.astro';
+import ServiceTimes from '../components/ServiceTimes.astro';
+import { homeModel } from '../lib/home';
+import { pageImages, imageById } from '../lib/images';
+import { site } from '../../site.config';
+
+const { page } = Astro.props;
+const m = homeModel(page.segments);
+const own = pageImages(page.images);
+const panelImages = site.home.panelImages.map(imageById).filter(Boolean);
+const heroImage = imageById(site.home.heroImage);
+const srcOf = (tag: string) => tag.match(/src="([^"]+)"/)?.[1]?.replace(/&amp;/g, '&');
+const embedSrcs = page.embeds.map(srcOf).filter(Boolean) as string[];
+const mediaEmbed = embedSrcs.find((s) => s.includes('/media/embed'));
+const mapEmbed = embedSrcs.find((s) => s.includes('google.com/maps'));
+const linksTo = (sec: any[], test: (h: string) => boolean) => sec.some((s) => s.href && test(s.href));
+const isMediaSection = (sec: any[]) =>
+  linksTo(sec, (h) => site.mediaLinkPaths.some((p) => h === p || h.startsWith(p + '/')));
+const isMapSection = (sec: any[]) => linksTo(sec, (h) => h.includes('google.com/maps'));
+const external = (h: string) => /^https?:/.test(h);
+
+let mediaUsed = false;
+let mapUsed = false;
+const rest = m.rest.map((sec) => {
+  const withMedia = !mediaUsed && !!mediaEmbed && isMediaSection(sec);
+  const withMap = !mapUsed && !!mapEmbed && isMapSection(sec);
+  if (withMedia) mediaUsed = true;
+  if (withMap) mapUsed = true;
+  return { sec, withMedia, withMap };
+});
+---
+<Base title={page.title} description={page.description} currentPath={page.path} sharedFooter={!page.chromeMismatch}>
+  <Hero heading={m.heading} eyebrow={m.eyebrow} lead={m.lines} image={heroImage ?? own[0]} size="full">
+    {m.announcements.map((a, i) => (
+      <a class="announce" href={a.href} {...(external(a.href!) ? { rel: 'noopener', target: '_blank' } : {})}>
+        {i === 0 && own[0] && heroImage && (
+          <Picture src={own[0]} alt="" formats={['avif', 'webp']} widths={[240, 480]} sizes="120px" class="announce-img" />
+        )}
+        <span>{a.text}</span>
+      </a>
+    ))}
+    {m.ctas.length > 0 && (
+      <div class="hero-ctas">
+        {m.ctas.map((c, i) => <a class:list={['btn', i === 0 ? 'btn-primary' : 'btn-ghost']} href={c.href}>{c.text}</a>)}
+      </div>
+    )}
+  </Hero>
+
+  {(m.intro.length > 0 || m.pillars.length > 0) && (
+    <section class="pillars tone-dark">
+      {m.intro.map((t) => <p class="intro container display">{t}</p>)}
+      {m.pillars.map((p, i) => {
+        const img = panelImages.length ? panelImages[i % panelImages.length] : undefined;
+        return (
+          <article class:list={['pillar', { flip: i % 2 === 1 }]} data-pillar>
+            {img && (
+              <Picture src={img} alt="" formats={['avif', 'webp']} widths={[640, 1280, 2000]} sizes="100vw" class="pillar-img" loading="lazy" />
+            )}
+            <div class="pillar-scrim" aria-hidden="true"></div>
+            <div class="container pillar-inner reveal">
+              <h2 class="pillar-word display">{p.word}</h2>
+              {p.sub && <h3 class="pillar-sub">{p.sub}</h3>}
+              {p.body.map((b) => <p>{b.text}</p>)}
+            </div>
+          </article>
+        );
+      })}
+    </section>
+  )}
+
+  {rest.map(({ sec, withMedia, withMap }, i) => (
+    <section class:list={['band', withMedia ? 'tone-dark' : i % 2 ? 'tone-light-2' : 'tone-light']}>
+      <div class:list={['container', { split: withMedia || withMap }]}>
+        <div class="read reveal"><Blocks segments={sec} forms={page.forms} pagePath={page.path} /></div>
+        {withMedia && <div class="reveal"><SubsplashEmbed src={mediaEmbed!} title="Media player" /></div>}
+        {withMap && <div class="reveal"><SubsplashEmbed src={mapEmbed!} title="Map" ratio="4 / 3" /></div>}
+      </div>
+    </section>
+  ))}
+
+  {!page.chromeMismatch && <ServiceTimes segments={site.footer} id="service-times" columns={2} />}
+</Base>
+
+<style>
+  .announce {
+    display: inline-flex; align-items: center; gap: 14px; margin: 0 0 26px; padding: 8px 18px 8px 8px;
+    border-radius: 16px; background: rgba(17, 17, 17, .55); color: #fff; font-size: .88rem; font-weight: 600;
+    border: 1px solid rgb(var(--accent-rgb) / .6); text-decoration: none; max-width: 100%;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  .announce:hover { border-color: var(--accent); background: rgba(17, 17, 17, .75); }
+  .announce :global(.announce-img) { width: 96px; height: 56px; object-fit: cover; border-radius: 10px; flex: none; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .intro { font-size: clamp(2rem, 5vw, 3.5rem); padding-block: 72px 24px; margin: 0 auto; color: var(--accent); }
+  .pillar { position: relative; min-height: clamp(480px, 80vh, 760px); display: grid; align-items: center; overflow: hidden; }
+  .pillar :global(.pillar-img), .pillar :global(picture) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .pillar :global(.pillar-img) { object-fit: cover; }
+  .pillar-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,17,17,.92) 0%, rgba(17,17,17,.66) 50%, rgba(17,17,17,.38) 100%); }
+  .pillar.flip .pillar-scrim { background: linear-gradient(270deg, rgba(17,17,17,.92) 0%, rgba(17,17,17,.66) 50%, rgba(17,17,17,.38) 100%); }
+  .pillar-inner { position: relative; padding-block: 88px; }
+  .pillar-inner > * { max-width: 58ch; }
+  .pillar.flip .pillar-inner { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+  .pillar-word { font-size: clamp(4.5rem, 16vw, 12rem); line-height: .85; color: var(--accent); }
+  .pillar-sub { font: 700 clamp(1.1rem, 2.2vw, 1.5rem)/1.3 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: #fff; margin: 18px 0 14px; }
+  .pillar p { color: rgba(255, 255, 255, .9); }
+  .band { padding-block: clamp(56px, 8vw, 104px); }
+  .split { display: grid; gap: clamp(28px, 5vw, 56px); align-items: center; }
+  @media (min-width: 900px) { .split { grid-template-columns: .9fr 1.1fr; } }
+  @media (max-width: 699px) { .pillar.flip .pillar-inner { align-items: flex-start; text-align: left; } }
+</style>

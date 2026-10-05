@@ -1,0 +1,295 @@
+{
+  "url": "https://www.fcci.life/easter",
+  "path": "/easter",
+  "slug": "easter",
+  "title": "Faith Christian Center International - Easter",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h2",
+      "text": "JESUS DID IT FOR YOU!"
+    },
+    {
+      "kind": "p",
+      "text": "Your story has greater depths than what you may realize. Regardless of your current circumstances, God has a path and destiny for you that surpasses what you can imagine. It’s a life filled with greater expectation, optimism, and purpose. No matter where you are on your path in life…THERE IS MORE!"
+    },
+    {
+      "kind": "p",
+      "text": "We extend an invitation for you to discover that 'MORE' for yourself. We have an extraordinary Resurrection Celebration in store for you that will delight the entire family. Bring your children along, but know this, they’ll absolutely enjoy their faithKidz experience and will remind you again and again until the next time you bring them back."
+    },
+    {
+      "kind": "p",
+      "text": "Learn More",
+      "href": "/i-m-new"
+    },
+    {
+      "kind": "h2",
+      "text": "- WHAT TO EXPECT -"
+    },
+    {
+      "kind": "p",
+      "text": "Have questions about what to expect that you don’t see answered here? Email us at connect@fccintl.org or call 434-979-1700."
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "https://www.fcci.life/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "https://www.fcci.life/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Learn More",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14452536_1920x1080_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14977992_500x500_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14455266_800x200_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14455515_1200x900_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14455544_1200x900_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/14455564_1200x900_500.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [],
+  "forms": [],
+  "layout": "standard"
+}

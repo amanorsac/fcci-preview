@@ -1,0 +1,362 @@
+{
+  "url": "https://www.fcci.life/connect-card",
+  "path": "/connect-card",
+  "slug": "connect-card",
+  "title": "Faith Christian Center International - Connect Card",
+  "description": "Church in Charlottesville, Virginia",
+  "segments": [
+    {
+      "kind": "h1",
+      "text": "Connect card"
+    },
+    {
+      "kind": "h2",
+      "text": "Connect Card"
+    },
+    {
+      "kind": "p",
+      "text": "Welcome to our church! We're glad you're here. Our team would love to serve you and help you get connected."
+    },
+    {
+      "kind": "form",
+      "formId": "connect-card-1",
+      "text": ""
+    }
+  ],
+  "navChrome": [
+    "Home",
+    "About",
+    "Mission and Vision",
+    "What We Believe",
+    "Leadership",
+    "Kidz & Youth",
+    "Connect",
+    "Calendar",
+    "Connect Groups",
+    "Growth Track",
+    "Jesus",
+    "Pastor's Blog",
+    "I'm New",
+    "Watch Live",
+    "Sermons",
+    "Give",
+    "Blog"
+  ],
+  "footerChrome": [
+    {
+      "kind": "h3",
+      "text": "Charlottesville Campus"
+    },
+    {
+      "kind": "p",
+      "text": "2186 Richmond Road"
+    },
+    {
+      "kind": "p",
+      "text": "Charlottesville, Virginia 22911"
+    },
+    {
+      "kind": "h3",
+      "text": "Service Times"
+    },
+    {
+      "kind": "p",
+      "text": "Sunday- 10:00am"
+    },
+    {
+      "kind": "p",
+      "text": "Wednesday-7:00pm"
+    },
+    {
+      "kind": "p",
+      "text": "Phone: (434) 979-1700"
+    },
+    {
+      "kind": "p",
+      "text": "Email: connect@fccintl.org"
+    },
+    {
+      "kind": "h3",
+      "text": "Let's Connect"
+    },
+    {
+      "kind": "p",
+      "text": "> Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "kind": "p",
+      "text": "> Partner Login"
+    },
+    {
+      "kind": "p",
+      "text": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "kind": "p",
+      "text": "> Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "kind": "h3",
+      "text": "Social Pages"
+    }
+  ],
+  "chromeMismatch": false,
+  "links": [
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://connect@fccintl.org"
+    },
+    {
+      "label": "",
+      "href": "/"
+    },
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "https://www.fcci.life/about"
+    },
+    {
+      "label": "Mission and Vision",
+      "href": "/mission-and-vision"
+    },
+    {
+      "label": "What We Believe",
+      "href": "/what-we-believe"
+    },
+    {
+      "label": "Leadership",
+      "href": "/leadership"
+    },
+    {
+      "label": "Kidz & Youth",
+      "href": "/kidz-amp-youth"
+    },
+    {
+      "label": "Connect",
+      "href": "https://www.fcci.life/connect"
+    },
+    {
+      "label": "Calendar",
+      "href": "/calendar"
+    },
+    {
+      "label": "Connect Groups",
+      "href": "/connect-groups"
+    },
+    {
+      "label": "Growth Track",
+      "href": "/growth-track"
+    },
+    {
+      "label": "Jesus",
+      "href": "/jesus"
+    },
+    {
+      "label": "Pastor's Blog",
+      "href": "/pastor-s-blog"
+    },
+    {
+      "label": "I'm New",
+      "href": "/i-m-new"
+    },
+    {
+      "label": "Watch Live",
+      "href": "/media/live"
+    },
+    {
+      "label": "Sermons",
+      "href": "/sermons"
+    },
+    {
+      "label": "Give",
+      "href": "/give"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Send",
+      "href": "/connect-card"
+    },
+    {
+      "label": "Water Baptism Sign Up",
+      "href": "https://subsplash.com/u/-BPM5XF/forms/d/24f8fa5d-0b82-4d0c-b0df-e5537c8b4293"
+    },
+    {
+      "label": "Partner Log",
+      "href": "https://dashboard.subsplash.com"
+    },
+    {
+      "label": "> Faith Christian Academy",
+      "href": "https://fcacdc.org/"
+    },
+    {
+      "label": "Download App (iOS)",
+      "href": "https://apps.apple.com/us/app/id823372347"
+    },
+    {
+      "label": "Download App (Android)",
+      "href": "https://play.google.com/store/apps/details?id=io.pushpay.fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.facebook.com/fccintl"
+    },
+    {
+      "label": "",
+      "href": "https://www.twitter.com/fccintl1"
+    },
+    {
+      "label": "",
+      "href": "https://www.instagram.com/fccintl"
+    },
+    {
+      "label": "powered by SnapPages",
+      "href": "https://snappages.com?utm_source=user&utm_medium=footer"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/images/11503942_596x300_500.png",
+      "alt": ""
+    },
+    {
+      "src": "https://storage1.snappages.site/BPM5XF/assets/favicon.png",
+      "alt": ""
+    }
+  ],
+  "embeds": [
+    "<form class=\"sp-form\"><div class=\"sp-fieldset required\" data-type=\"name\"><div class=\"sp-field-col\">"
+  ],
+  "forms": [
+    {
+      "id": "connect-card-1",
+      "fields": [
+        {
+          "name": "f0",
+          "type": "text",
+          "label": "First Name",
+          "required": true
+        },
+        {
+          "name": "f1",
+          "type": "text",
+          "label": "Last Name",
+          "required": true
+        },
+        {
+          "name": "f2",
+          "type": "email",
+          "label": "Email",
+          "required": false
+        },
+        {
+          "name": "f3",
+          "type": "tel",
+          "label": "Phone",
+          "required": false
+        },
+        {
+          "name": "f4",
+          "type": "text",
+          "label": "Address 1",
+          "required": false
+        },
+        {
+          "name": "f5",
+          "type": "text",
+          "label": "Address 2",
+          "required": false
+        },
+        {
+          "name": "f6",
+          "type": "text",
+          "label": "Country",
+          "required": false
+        },
+        {
+          "name": "f7",
+          "type": "text",
+          "label": "City",
+          "required": false
+        },
+        {
+          "name": "f8",
+          "type": "text",
+          "label": "State",
+          "required": false
+        },
+        {
+          "name": "f9",
+          "type": "text",
+          "label": "Zip/Postal Code",
+          "required": false
+        },
+        {
+          "name": "f10",
+          "type": "radio",
+          "required": true,
+          "label": "How many times have you visited our church?",
+          "options": [
+            "This is my first time",
+            "A few times",
+            "Regular attender"
+          ]
+        },
+        {
+          "name": "f11",
+          "type": "checkbox",
+          "required": false,
+          "label": "I would like to learn more about (check all that apply):",
+          "options": [
+            "Baptism",
+            "Volunteering",
+            "Membership",
+            "Community Groups",
+            "Jesus"
+          ]
+        },
+        {
+          "name": "f12",
+          "type": "textarea",
+          "label": "How did you hear about us?",
+          "required": false
+        },
+        {
+          "name": "f13",
+          "type": "textarea",
+          "label": "Anything else you'd like to share?",
+          "required": false
+        }
+      ],
+      "submitLabel": "Send",
+      "successText": "Thank you for contacting us! We will respond shortly.",
+      "subject": "Connect Card"
+    }
+  ],
+  "layout": "form"
+}
