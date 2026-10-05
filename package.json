@@ -6,12 +6,13 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/draft-copy.mjs && astro build",
     "dev:worker": "astro build && wrangler dev --port 8788",
     "test": "npm run build && vitest run",
     "test:e2e": "playwright test",
     "import": "node scripts/import-content.mjs",
-    "test:fast": "vitest run"
+    "test:fast": "vitest run",
+    "draft-copy": "node scripts/draft-copy.mjs"
   },
   "type": "module",
   "devDependencies": {

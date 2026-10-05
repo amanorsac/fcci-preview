@@ -1,0 +1,10 @@
+{
+  "page": "(site-wide menu)",
+  "items": [
+    { "key": "nextSteps", "text": "Next Steps" },
+    { "key": "ministries", "text": "Ministries" },
+    { "key": "dreamTeam", "text": "Dream Team" },
+    { "key": "watch", "text": "Watch" },
+    { "key": "baptism", "text": "Baptism" }
+  ]
+}
