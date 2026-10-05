@@ -71,6 +71,10 @@ describe('wording fidelity on every page', () => {
       const need = new Map();
       for (const l of sourceLines(md)) if (!absent.has(l)) need.set(l, (need.get(l) ?? 0) + 1);
       for (const l of PERMITTED_COLLAPSE[page.path] ?? []) if (need.has(l)) need.set(l, 1);
+      // The old site's menu is replaced by the v2 menu (spec v2 §4); its labels
+      // are chrome, not page content. Subtract exactly those occurrences.
+      for (const l of page.navChrome.map(normalize)) if (need.has(l)) need.set(l, need.get(l) - 1);
+      for (const [l, n] of need) if (n <= 0) need.delete(l);
 
       const missing = [];
       for (const [line, count] of need) {
@@ -107,6 +111,21 @@ describe('wording fidelity on every page', () => {
       const extra = nodes.filter((t) => !allowed.has(t));
 
       expect({ path: page.path, missing, extra }).toEqual({ path: page.path, missing: [], extra: [] });
+    });
+  }
+});
+
+// New pages carry only church text (from any page) or reviewable draft text.
+describe('new pages use only church or draft wording', () => {
+  const corpus = new Set(pages.flatMap((p) => sourceLines(readFileSync(join('source/pages', `${p.slug}.md`), 'utf8'))));
+  const formWords = pages.flatMap((p) => p.forms.flatMap((f) => [f.legend, f.submitLabel, f.successText,
+    ...f.fields.flatMap((x) => [x.label, ...(x.options ?? [])])])).filter(Boolean).map(normalize);
+  const allowed = new Set([...corpus, ...formWords, ...DRAFT_TEXT,
+    ...SHARED_CHROME_TEXT.map(normalize), ...ALLOWED_EXTRA_TEXT.map(normalize), normalize(site.formDefaultSuccess)]);
+  for (const path of ['/dream-team', '/ministries', '/next-steps']) {
+    it(path, () => {
+      const nodes = extractBuiltSegments(readFileSync(builtFile(path), 'utf8'));
+      expect(nodes.filter((t) => !allowed.has(t))).toEqual([]);
     });
   }
 });

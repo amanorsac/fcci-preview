@@ -1,0 +1,20 @@
+{
+  "page": "/next-steps",
+  "items": [
+    { "key": "eyebrow", "text": "Next Steps" },
+    { "key": "title", "text": "Your next step starts here." },
+    { "key": "lead", "text": "Wherever you are with God, there is a next step for you. Start with one." },
+    { "key": "1.title", "text": "Plan your visit" },
+    { "key": "1.text", "text": "Join us for one of our services, Sundays at 10:00am or Wednesdays at 7:00pm." },
+    { "key": "2.title", "text": "Meet Jesus" },
+    { "key": "2.text", "text": "Learn what it means to know Him personally." },
+    { "key": "3.title", "text": "Take the Growth Track" },
+    { "key": "3.text", "text": "Discover your purpose, your gifts and your place in the church." },
+    { "key": "4.title", "text": "Get baptized" },
+    { "key": "4.text", "text": "Make a public declaration of your faith in water baptism." },
+    { "key": "5.title", "text": "Join a Connect Group" },
+    { "key": "5.text", "text": "Do life together and grow with others in a small group." },
+    { "key": "6.title", "text": "Join the Dream Team" },
+    { "key": "6.text", "text": "Use your gifts to serve and make a difference." }
+  ]
+}

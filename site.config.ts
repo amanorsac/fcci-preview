@@ -27,39 +27,69 @@ export const site = {
   },
 
   // Labels are verbatim from the source nav (src/content/chrome.json).
+  // Labels are the church's own (chrome.json / page titles) or draft wording
+  // from src/content/draft/nav.json; a test enforces this.
   nav: [
-    { label: 'Home', href: '/' },
     {
       label: 'About',
       children: [
         { label: 'Mission and Vision', href: '/mission-and-vision' },
         { label: 'What We Believe', href: '/what-we-believe' },
         { label: 'Leadership', href: '/leadership' },
-        { label: 'Kidz & Youth', href: '/kidz-amp-youth' },
+        { label: 'Our Story', href: '/our-story' },
       ],
     },
     {
-      label: 'Connect',
+      label: 'Next Steps',
       children: [
-        { label: 'Calendar', href: '/calendar' },
-        { label: 'Connect Groups', href: '/connect-groups' },
-        { label: 'Growth Track', href: '/growth-track' },
-        { label: 'Jesus', href: '/jesus' },
-        { label: "Pastor's Blog", href: '/pastor-s-blog' },
+        { label: 'Next Steps', href: '/next-steps' },
         { label: "I'm New", href: '/i-m-new' },
+        { label: 'Jesus', href: '/jesus' },
+        { label: 'Growth Track', href: '/growth-track' },
+        { label: 'Baptism', href: '/baptism-signup' },
+        { label: 'Connect Card', href: '/connect-card' },
       ],
     },
-    { label: 'Watch Live', href: '/media/live' },
-    { label: 'Sermons', href: '/sermons' },
+    {
+      label: 'Ministries',
+      children: [
+        { label: 'Ministries', href: '/ministries' },
+        { label: 'Kidz & Youth', href: '/kidz-amp-youth' },
+        { label: 'Students', href: '/students' },
+        { label: 'Men', href: '/men' },
+        { label: 'Women', href: '/women' },
+        { label: 'Connect Groups', href: '/connect-groups' },
+      ],
+    },
+    { label: 'Dream Team', href: '/dream-team' },
+    {
+      label: 'Watch',
+      children: [
+        { label: 'Watch Live', href: '/media/live' },
+        { label: 'Sermons', href: '/sermons' },
+        { label: "Pastor's Blog", href: '/pastor-s-blog' },
+        { label: 'Blog', href: '/blog' },
+      ],
+    },
+    { label: 'Calendar', href: '/calendar' },
     { label: 'Give', href: '/give' },
-    { label: 'Blog', href: '/blog' },
   ] as NavItem[],
 
   // "Plan Your Visit" is verbatim on the church's own home-v2 page.
   headerCtas: [
     { label: 'Plan Your Visit', href: '/i-m-new', kind: 'primary' },
-    { label: 'Give', href: '/give', kind: 'give' },
   ],
+  // Dream Team cards that have a matching photo slot.
+  teamSlots: {
+    'Altar Care/Prayer Team': 'team.prayer',
+    'Audio/Video Team': 'team.media',
+    "Cafe' Team": 'team.cafe',
+    'Faith Kidz Ministry Team': 'kids.hero',
+    'Guest Services Team': 'team.guest',
+    'Music Team': 'team.worship',
+    'Usher Team': 'team.ushers',
+    'Worship Arts Team': 'team.worship',
+  } as Record<string, string>,
 
   footer: chrome.footer,
   // Link targets for footer lines whose source link was malformed or unlabeled.
@@ -111,6 +141,7 @@ export const ALLOWED_EXTRA_TEXT = [
 ];
 export const SHARED_CHROME_TEXT = [
   ...chrome.nav,
+  ...site.nav.flatMap((n) => [n.label, ...(n.children ?? []).map((x) => x.label)]),
   ...chrome.footer.map((s) => s.text),
   ...site.headerCtas.map((c) => c.label),
 ];

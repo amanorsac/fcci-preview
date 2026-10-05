@@ -10,7 +10,8 @@ import { site } from '../../site.config';
 const { page } = Astro.props;
 const split = splitHero(page.segments);
 // A page that is empty on the old site uses the menu's own labels.
-const navLabel = (href: string) => site.nav.find((n) => n.href === href)?.label ?? '';
+const navLabel = (href: string) =>
+  site.nav.flatMap((n) => [n, ...(n.children ?? [])]).find((n) => n.href === href)?.label ?? '';
 const isEmpty = page.segments.length === 0;
 const heading = isEmpty ? navLabel('/media/live') : split.heading;
 const { eyebrow, body } = split;

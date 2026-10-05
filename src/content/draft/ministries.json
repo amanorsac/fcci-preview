@@ -1,0 +1,16 @@
+{
+  "page": "/ministries",
+  "items": [
+    { "key": "eyebrow", "text": "Ministries" },
+    { "key": "title", "text": "A place for every age and stage." },
+    { "key": "lead", "text": "From the nursery to the college years and beyond, there is a place for you and your family at Faith Christian Center." },
+    { "key": "kids", "text": "Birth through 5th grade. High energy, Bible-based fun every Sunday." },
+    { "key": "youth", "text": "Youth groups for tweens and teens, every Wednesday night." },
+    { "key": "college", "text": "College students and young adults, gathering for fellowship." },
+    { "key": "men", "text": "Men growing in faith and brotherhood together." },
+    { "key": "women", "text": "Women encouraging one another in faith and friendship." },
+    { "key": "groups", "text": "Small groups that meet through the week. Do life together." },
+    { "key": "dream", "text": "Serve on a team and use your gifts for God's glory." },
+    { "key": "learnMore", "text": "Learn more" }
+  ]
+}

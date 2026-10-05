@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import { draft } from '../lib/draft';
+import { slot } from '../lib/slots';
+import { site } from '../../site.config';
+
+const d = (k: string) => draft('ministries', k);
+// Names and times are the church's own words (from its pages and menu);
+// the one-line descriptions are draft wording.
+const cards = [
+  { name: 'FAITH KIDZ!', when: 'Sundays @ 10 AM', text: d('kids'), href: '/kidz-amp-youth', slot: 'tile.kids' },
+  { name: 'Infusion Youth & G-One Teens', when: 'Wednesdays @ 7PM', text: d('youth'), href: '/students', slot: 'tile.youth' },
+  { name: 'College/Young Adult Ministry', when: 'Meets Quarterly', text: d('college'), href: '/kidz-amp-youth', slot: 'next-steps' },
+  { name: 'Men', text: d('men'), href: '/men', slot: 'teach' },
+  { name: 'Women', text: d('women'), href: '/women', slot: 'tile.new' },
+  { name: 'Connect Groups', text: d('groups'), href: '/connect-groups', slot: 'tile.groups' },
+  { name: 'Dream Team', text: d('dream'), href: '/dream-team', slot: 'team.guest' },
+];
+const pairOf = (id: string) => (id === 'teach' ? slot('home.teach') : slot(id));
+---
+<Base title={`${d('eyebrow')} | ${site.name}`} description={d('lead')} currentPath="/ministries">
+  <Hero heading={d('title')} eyebrow={[d('eyebrow')]} lead={[d('lead')]} pair={slot('kids.hero')} size="compact" />
+  <section class="band tone-light">
+    <div class="container">
+      <ul class="grid" role="list">
+        {cards.map((c, i) => (
+          <li class:list={['card', 'reveal', { feature: i === 0 }]}>
+            <a href={c.href} class="card-link">
+              <div class="media"><ImageSlot pair={pairOf(c.slot)} sizes="(min-width: 900px) 33vw, 100vw" widths={[400, 800, 1200]} /></div>
+              <div class="body">
+                {c.when && <p class="eyebrow">{c.when}</p>}
+                <h2 class="name">{c.name}</h2>
+                <p>{c.text}</p>
+                <span class="more">{d('learnMore')} <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .band { padding-block: clamp(48px, 7vw, 96px); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .card { border-radius: var(--radius-lg); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
+  .card.feature { border: 0; background: var(--grad); }
+  @media (min-width: 900px) { .card.feature { grid-column: span 2; } }
+  .card-link { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--ink); }
+  .media { aspect-ratio: 16 / 10; overflow: hidden; }
+  .media :global(picture), .media :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
+  .card:hover .media :global(img) { transform: scale(1.03); }
+  .body { padding: 22px 24px 26px; }
+  .card.feature .eyebrow { color: var(--ink); }
+  .name { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 4px 0 8px; }
+  .body p { margin: 0 0 14px; }
+  .more { font-weight: 900; }
+</style>

@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import FormRenderer from '../components/FormRenderer.astro';
+import formDefs from '../form/form-defs.json';
+import { draft } from '../lib/draft';
+import { slot } from '../lib/slots';
+import { site } from '../../site.config';
+
+const d = (k: string) => draft('dream-team', k);
+const form = (formDefs as Record<string, any>)['volunteer-signup-1'];
+// The teams are the church's own list, from its volunteer form.
+const teams: string[] = form.fields.find((f: any) => f.type === 'checkbox').options.filter((o: string) => o !== 'Other');
+const why = [1, 2, 3].map((n) => ({ title: d(`why.${n}.title`), text: d(`why.${n}.text`) }));
+const steps = [1, 2, 3].map((n) => d(`join.${n}`));
+---
+<Base title={`${d('form.title')} | ${site.name}`} description={d('lead')} currentPath="/dream-team">
+  <Hero heading={d('title')} eyebrow={[d('eyebrow')]} lead={[d('lead')]} pair={slot('team.guest')} size="tall">
+    <p class="hero-cta"><a class="btn btn-primary" href="#join">{d('form.title')}</a></p>
+  </Hero>
+
+  <section class="band tone-light">
+    <div class="container">
+      <h2 class="display sec-title">{d('why.title')}</h2>
+      <ul class="why" role="list">
+        {why.map((w, i) => (
+          <li class="why-card reveal">
+            <span class="num display" aria-hidden="true">{`0${i + 1}`}</span>
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band tone-light-2">
+    <div class="container">
+      <h2 class="display sec-title">{d('teams.title')}</h2>
+      <ul class="teams" role="list">
+        {teams.map((t) => {
+          const id = site.teamSlots[t];
+          return (
+            <li class="team reveal" data-team>
+              <div class="team-media">
+                {id ? <ImageSlot pair={slot(id)} sizes="(min-width: 900px) 30vw, 100vw" widths={[400, 800]} class="team-img" /> : <div class="team-art" aria-hidden="true"></div>}
+              </div>
+              <div class="team-body">
+                <h3 class="team-name">{t}</h3>
+                <p>{d(`team.${t}`)}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band grad-band" id="join">
+    <div class="container join">
+      <div class="join-copy">
+        <h2 class="display sec-title">{d('join.title')}</h2>
+        <ol class="steps" role="list">
+          {steps.map((s, i) => <li><span class="step-num" aria-hidden="true">{i + 1}</span><span>{s}</span></li>)}
+        </ol>
+      </div>
+      <div class="join-form">
+        <h2 class="form-title">{d('form.title')}</h2>
+        <FormRenderer form={form} pagePath="/dream-team" />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-cta { margin: 28px 0 0; }
+  .band { padding-block: clamp(56px, 8vw, 104px); }
+  .sec-title { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 32px; }
+  .why { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .why-card { padding: 30px; border-radius: var(--radius-lg); background: var(--paper-2); }
+  .why-card h3 { font: 900 1.2rem/1.3 var(--font-body); margin: 10px 0 8px; }
+  .why-card p { margin: 0; color: #333; }
+  .num { font-size: 2.4rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .teams { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+  .team { background: #fff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .team-media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--grad); }
+  .team-media :global(picture), .team-media :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .team-art { width: 100%; height: 100%; background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .35), transparent 55%), var(--grad); }
+  .team-body { padding: 20px 22px 24px; }
+  .team-name { font: 900 1.1rem/1.3 var(--font-body); margin: 0 0 6px; overflow-wrap: anywhere; }
+  .team-body p { margin: 0; color: #444; font-size: .97rem; }
+  .join { display: grid; gap: clamp(28px, 5vw, 56px); align-items: start; }
+  @media (min-width: 960px) { .join { grid-template-columns: .8fr 1.2fr; } }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .steps li { display: flex; align-items: center; gap: 14px; font: 700 1.1rem/1.4 var(--font-body); }
+  .step-num { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-weight: 900; }
+  .form-title { font: 900 1.4rem/1.3 var(--font-body); margin: 0 0 -8px; }
+</style>

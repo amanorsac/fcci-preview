@@ -21,3 +21,16 @@ describe('components and layouts stay client-neutral', () => {
     });
   }
 });
+
+import { site } from '../../site.config';
+import { allDraft } from '../../scripts/lib/draft.mjs';
+
+describe('menu labels are church or draft wording', () => {
+  it('every nav label comes from the church site or the draft files', () => {
+    const corpus = new Set(readdirSync('source/pages').flatMap((f) =>
+      readFileSync(`source/pages/${f}`, 'utf8').split(/\r?\n/).map((l) => l.replace(/^#{1,3} /, '').trim())));
+    const draft = new Set(allDraft('src/content/draft').map((d) => d.text));
+    const labels = site.nav.flatMap((n) => [n.label, ...(n.children ?? []).map((c) => c.label)]);
+    for (const l of labels) expect(corpus.has(l) || draft.has(l), l).toBe(true);
+  });
+});

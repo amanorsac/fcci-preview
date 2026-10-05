@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const TOP = ['Home', 'About', 'Connect', 'Watch Live', 'Sermons', 'Give', 'Blog'];
+const TOP = ['About', 'Next Steps', 'Ministries', 'Dream Team', 'Watch', 'Calendar', 'Give'];
 
 for (const width of [375, 1280]) {
   test.describe(`shell at ${width}px`, () => {
@@ -15,7 +15,7 @@ for (const width of [375, 1280]) {
       await page.goto('/');
       if (width < 900) await page.getByRole('button', { name: 'Menu' }).click();
       const nav = page.getByRole('navigation', { name: 'Main' });
-      await expect(nav.getByRole('link', { name: 'Home' })).toBeVisible();
+      await expect(nav.getByRole('link', { name: 'Dream Team' })).toBeVisible();
       const tops = await nav.locator(':scope > ul > li > :is(a,button)').allTextContents();
       expect(tops.map((t) => t.trim())).toEqual(TOP);
       await nav.getByRole('button', { name: 'About' }).click();
@@ -28,7 +28,7 @@ for (const width of [375, 1280]) {
       await page.goto('/');
       const header = page.locator('header.site-header');
       await expect(header.getByRole('link', { name: 'Plan Your Visit' })).toHaveAttribute('href', '/i-m-new');
-      await expect(header.locator('a.cta-give')).toHaveAttribute('href', '/give');
+      await expect(header.locator('nav a[href="/give"]')).toHaveText('Give');
       await page.keyboard.press('Tab');
       if (test.info().project.name === 'chromium') {
         await expect(page.locator(':focus')).toHaveText('Skip to content');

@@ -20,7 +20,7 @@ const isPost = segs[0]?.kind === 'h1' && DATE.test(segs[1]?.text ?? '');
 const images = pageImages(page.images);
 
 // List pages: an optional h1, then cards of title / date / excerpt / byline.
-const blogLabel = site.nav.find((n) => n.href === '/blog')?.label ?? '';
+const blogLabel = site.nav.flatMap((n) => [n, ...(n.children ?? [])]).find((n) => n.href === '/blog')?.label ?? '';
 const listHeading = segs[0]?.kind === 'h1' ? segs[0].text : blogLabel;
 const listBody = segs[0]?.kind === 'h1' ? segs.slice(1) : segs;
 const cards: { title: string; date?: string; excerpt?: string; byline?: string; href?: string }[] = [];
