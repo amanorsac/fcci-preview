@@ -42,6 +42,22 @@ test('empty watch pages stay usable when Subsplash is blocked', async ({ page })
   }
 });
 
+test('the giving form in the hero starts loading only after the page has loaded', async ({ page, request }) => {
+  const html = await (await request.get('/give')).text();
+  const live = html.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
+  expect(live).toMatch(/<iframe[^>]*data-src="https:\/\/subsplash\.com[^"]*give/);
+  expect(live).not.toMatch(/<iframe[^>]*\ssrc="https:\/\/subsplash/);
+  await page.goto('/give');
+  await expect(page.locator('.player iframe[src*="subsplash.com"]')).toHaveCount(1);
+});
+
+test('the giving form is tall enough on a phone not to be cut off', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto('/give');
+  const box = await page.locator('.player .embed').boundingBox();
+  expect(box.height).toBeGreaterThanOrEqual(660);
+});
+
 test('give keeps the text-to-give wording and makes it tappable', async ({ page }) => {
   await page.goto('/give');
   const para = data('give').segments.find((s) => s.text.includes('FCCINTL')).text;

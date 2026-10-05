@@ -88,8 +88,8 @@ function h3Cards(g: Segment[]) {
         </div>
       )}
       {playerSrc && (
-        <div class="player reveal">
-          <SubsplashEmbed src={playerSrc} title={isGiving ? 'Giving form' : 'Media player'} ratio={isGiving ? '3 / 4' : '16 / 9'} />
+        <div class:list={['player', 'reveal', { giving: isGiving }]}>
+          <SubsplashEmbed src={playerSrc} title={isGiving ? 'Giving form' : 'Media player'} ratio={isGiving ? '3 / 4' : '16 / 9'} defer />
         </div>
       )}
     </div>
@@ -165,6 +165,8 @@ function h3Cards(g: Segment[]) {
   .hero-grid { position: relative; display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
   .has-player .hero-grid { grid-template-columns: 1fr; }
   @media (min-width: 960px) { .has-player .hero-grid { grid-template-columns: .85fr 1.15fr; } }
+  /* The giving form needs the height its own embed asks for (660px). */
+  .player.giving :global(.embed) { min-height: 660px; }
   .hero-copy h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.02; color: var(--ink); }
   .eyebrow { margin: 0 0 14px; }
   .lead { color: #333; max-width: 60ch; margin: 16px 0 0; }

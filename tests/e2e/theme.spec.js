@@ -27,3 +27,14 @@ for (const path of ['/', '/mission-and-vision', '/give', '/sermons']) {
     expect(axe.violations.filter((v) => ['serious', 'critical'].includes(v.impact))).toEqual([]);
   });
 }
+
+test('the not-found page is light too', async ({ page }) => {
+  const res = await page.goto('/no-such-page');
+  expect(res.status()).toBe(404);
+  const dark = await page.locator('main > *').evaluateAll((els) => els.filter((e) => {
+    const m = getComputedStyle(e).backgroundColor.match(/\d+/g);
+    return m && +m[0] < 60 && +m[1] < 60 && +m[2] < 60 && m.length === 3;
+  }).length);
+  expect(dark).toBe(0);
+  await expect(page.locator('main a[href="/"]')).toBeVisible();
+});

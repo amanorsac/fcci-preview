@@ -1,12 +1,26 @@
 ---
 // A lazy third-party media frame. The surrounding section always keeps its
 // own source link, so the page stays usable if the frame is blocked.
-interface Props { src: string; title: string; ratio?: string }
-const { src, title, ratio = '16 / 9' } = Astro.props;
+// `defer` holds the frame back until the page has loaded: use it for frames
+// in the hero, where lazy loading does not apply.
+interface Props { src: string; title: string; ratio?: string; defer?: boolean }
+const { src, title, ratio = '16 / 9', defer = false } = Astro.props;
+const attrs = { title, allow: 'clipboard-read; clipboard-write; fullscreen', allowfullscreen: true, referrerpolicy: 'strict-origin-when-cross-origin' as const };
 ---
 <div class="embed" style={`aspect-ratio:${ratio}`}>
-  <iframe src={src} title={title} loading="lazy" allow="clipboard-read; clipboard-write; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {defer
+    ? <><iframe data-src={src} {...attrs}></iframe><noscript><iframe src={src} {...attrs}></iframe></noscript></>
+    : <iframe src={src} loading="lazy" {...attrs}></iframe>}
 </div>
+
+<script>
+  const start = () => document.querySelectorAll<HTMLIFrameElement>('iframe[data-src]').forEach((f) => { f.src = f.dataset.src!; });
+  // Wait for the first idle moment after load, so the frame never competes
+  // with the page's own first paint.
+  const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 2000 }) : setTimeout(start, 200));
+  if (document.readyState === 'complete') idle();
+  else addEventListener('load', idle, { once: true });
+</script>
 
 <style>
   .embed { position: relative; width: 100%; border-radius: var(--radius-lg); overflow: hidden; background: var(--ink-2); box-shadow: var(--shadow); }
