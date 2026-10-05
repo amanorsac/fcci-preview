@@ -18,7 +18,7 @@ const photoFor = (i: number) => images[i + 1];
   {groups.map((g, i) => {
     const photo = photoFor(i);
     return (
-      <section class:list={['band', i % 2 ? 'tone-dark' : 'tone-light']}>
+      <section class:list={['band', i % 2 ? 'tone-light-2' : 'tone-light']}>
         <div class:list={['container', 'split', { 'has-photo': photo, flip: i % 2 }]}>
           <div class="copy reveal"><Blocks segments={g} forms={page.forms} pagePath={page.path} /></div>
           {photo && (

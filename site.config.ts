@@ -18,7 +18,12 @@ export const site = {
     ink2: '#2c2c2c',
     gray: '#444444',
     paper: '#ffffff',
-    paper2: '#f6f4f1',
+    paper2: '#f7f5f2',
+    // fcci.life heading blue, deepened from #2b7bb9 so small text passes AA on off-white.
+    blue: '#1f6aa5',
+    // Sampled from the REACH / TEACH / TRANSFORM band on fcci.life.
+    gradFrom: '#ee7b1a',
+    gradTo: '#fe5cc4',
   },
 
   // Labels are verbatim from the source nav (src/content/chrome.json).

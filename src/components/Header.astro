@@ -56,74 +56,67 @@ const groupHasCurrent = (item: NavItem) => item.children?.some((c) => c.href ===
 </header>
 
 <style>
-  .site-header {
-    position: sticky; top: 0; z-index: 50; color: #fff;
-    isolation: isolate;
-  }
+  .site-header { position: sticky; top: 0; z-index: 50; color: var(--ink); isolation: isolate; }
   /* Background lives on a pseudo-element so a blur never becomes the
      containing block of the fixed mobile menu. */
   .site-header::before {
     content: ''; position: absolute; inset: 0; z-index: -1;
-    background: var(--ink);
-    transition: background-color .35s var(--ease);
+    background: rgba(255, 255, 255, 1); border-bottom: 1px solid var(--line);
+    transition: background-color .35s var(--ease), box-shadow .35s var(--ease);
   }
   .site-header.is-scrolled::before {
-    background: rgba(17, 17, 17, .78);
-    backdrop-filter: saturate(160%) blur(16px);
-    -webkit-backdrop-filter: saturate(160%) blur(16px);
+    background: rgba(255, 255, 255, .86); box-shadow: 0 8px 30px -20px rgba(17, 17, 17, .35);
+    backdrop-filter: saturate(160%) blur(16px); -webkit-backdrop-filter: saturate(160%) blur(16px);
   }
   .bar { height: var(--header-h); display: flex; align-items: center; gap: 24px; }
-  .brand img { height: 44px; width: auto; }
+  /* The church logo is white; on the light header it is shown dark. */
+  .brand img { height: 46px; width: auto; filter: brightness(0) saturate(100%); }
   .nav { margin-left: auto; }
-  .nav > ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .nav > ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
   .nav li { position: relative; }
   .nav-link {
     display: inline-flex; align-items: center; gap: 6px;
-    padding: 10px 12px; border: 0; background: none; color: rgba(255,255,255,.86);
-    font: 500 .92rem/1 var(--font-body); text-decoration: none; cursor: pointer; border-radius: 8px;
+    padding: 10px 12px; border: 0; background: none; color: var(--ink);
+    font: 700 .92rem/1 var(--font-body); text-decoration: none; cursor: pointer; border-radius: 10px;
   }
-  .nav-link:hover, .nav-link[aria-expanded='true'] { color: #fff; background: rgba(255,255,255,.07); }
-  .nav-link.is-current { color: #fff; box-shadow: inset 0 -2px 0 var(--accent); border-radius: 0; }
+  .nav-link:hover, .nav-link[aria-expanded='true'] { background: var(--paper-2); }
+  .nav-link.is-current { box-shadow: inset 0 -3px 0 var(--accent); border-radius: 0; }
   .chev { transition: transform .2s var(--ease); }
   [aria-expanded='true'] > .chev { transform: rotate(180deg); }
   .sub {
-    position: absolute; top: calc(100% + 10px); left: 0; min-width: 230px;
+    position: absolute; top: calc(100% + 10px); left: 0; min-width: 240px;
     list-style: none; margin: 0; padding: 8px; border-radius: var(--radius);
-    background: var(--ink-2); box-shadow: var(--shadow);
+    background: #fff; box-shadow: var(--shadow); border: 1px solid var(--line);
   }
-  .sub a { display: block; padding: 10px 14px; border-radius: 10px; color: #fff; text-decoration: none; font-size: .95rem; }
-  .sub a:hover { background: rgba(255,255,255,.08); }
+  .sub a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--ink); text-decoration: none; font-size: .95rem; font-weight: 600; }
+  .sub a:hover { background: var(--paper-2); color: color-mix(in srgb, var(--accent) 70%, black); }
   .ctas { display: flex; align-items: center; gap: 10px; }
-  .ctas .btn { min-height: 42px; padding: .65em 1.2em; font-size: .88rem; }
-  .menu-btn { display: none; width: 46px; height: 46px; border: 0; border-radius: 10px; background: rgba(255,255,255,.08); color: #fff; cursor: pointer; }
+  .ctas .btn { min-height: 44px; padding: .65em 1.25em; font-size: .9rem; }
+  .menu-btn { display: none; width: 46px; height: 46px; border: 0; border-radius: 12px; background: var(--paper-2); color: var(--ink); cursor: pointer; }
   .bars { display: grid; gap: 6px; width: 20px; margin: auto; }
   .bars span { height: 2px; background: currentColor; border-radius: 2px; transition: transform .25s var(--ease); }
   .menu-btn[aria-expanded='true'] .bars span:first-child { transform: translateY(4px) rotate(45deg); }
   .menu-btn[aria-expanded='true'] .bars span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
-  @media (max-width: 1099px) {
-    .ctas .cta-give { display: none; }
-  }
+  @media (max-width: 1099px) { .ctas .cta-give { display: none; } }
   @media (max-width: 899px) {
-    .brand img { height: 36px; }
+    .brand img { height: 38px; }
     .menu-btn { display: block; }
     .ctas { margin-left: auto; }
-    .ctas .btn { min-height: 40px; padding: .6em 1em; font-size: .82rem; }
+    .ctas .btn { min-height: 42px; padding: .6em 1em; font-size: .84rem; }
     .nav {
       position: fixed; inset: var(--header-h) 0 0 0; margin: 0;
-      background: var(--ink); overflow-y: auto; padding: 16px var(--gutter) 40px;
+      background: #fff; overflow-y: auto; padding: 16px var(--gutter) 40px;
       visibility: hidden; opacity: 0; transform: translateY(-8px);
       transition: opacity .25s var(--ease), transform .25s var(--ease), visibility 0s linear .25s;
     }
     .nav.is-open { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
     .nav > ul { flex-direction: column; gap: 0; }
-    .nav-link { width: 100%; justify-content: space-between; padding: 16px 4px; font-size: 1.15rem; border-bottom: 1px solid rgba(255,255,255,.08); border-radius: 0; }
-    .nav-link.is-current { box-shadow: none; color: var(--accent); }
-    .sub { position: static; box-shadow: none; background: transparent; padding: 4px 0 12px 12px; }
+    .nav-link { width: 100%; justify-content: space-between; padding: 16px 4px; font-size: 1.15rem; border-bottom: 1px solid var(--line); border-radius: 0; }
+    .nav-link.is-current { box-shadow: none; color: color-mix(in srgb, var(--accent) 70%, black); }
+    .sub { position: static; box-shadow: none; border: 0; background: transparent; padding: 4px 0 12px 12px; }
   }
-  @media (max-width: 380px) {
-    .ctas .cta-primary { padding: .6em .8em; }
-  }
+  @media (max-width: 380px) { .ctas .cta-primary { padding: .6em .8em; } }
 </style>
 
 <script>

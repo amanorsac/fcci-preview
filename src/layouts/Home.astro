@@ -74,7 +74,7 @@ const rest = m.rest.map((sec) => {
   )}
 
   {rest.map(({ sec, withMedia, withMap }, i) => (
-    <section class:list={['band', withMedia ? 'tone-dark' : i % 2 ? 'tone-light-2' : 'tone-light']}>
+    <section class:list={['band', withMedia ? 'tone-light-2' : i % 2 ? 'tone-light-2' : 'tone-light']}>
       <div class:list={['container', { split: withMedia || withMap }]}>
         <div class="read reveal"><Blocks segments={sec} forms={page.forms} pagePath={page.path} /></div>
         {withMedia && <div class="reveal"><SubsplashEmbed src={mediaEmbed!} title="Media player" /></div>}
@@ -89,11 +89,10 @@ const rest = m.rest.map((sec) => {
 <style>
   .announce {
     display: inline-flex; align-items: center; gap: 14px; margin: 0 0 26px; padding: 8px 18px 8px 8px;
-    border-radius: 16px; background: rgba(17, 17, 17, .55); color: #fff; font-size: .88rem; font-weight: 600;
-    border: 1px solid rgb(var(--accent-rgb) / .6); text-decoration: none; max-width: 100%;
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-radius: 16px; background: #fff; color: var(--ink); font-size: .9rem; font-weight: 700;
+    border: 1px solid var(--line); box-shadow: var(--shadow-sm); text-decoration: none; max-width: 100%;
   }
-  .announce:hover { border-color: var(--accent); background: rgba(17, 17, 17, .75); }
+  .announce:hover { border-color: var(--accent); }
   .announce :global(.announce-img) { width: 96px; height: 56px; object-fit: cover; border-radius: 10px; flex: none; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
   .intro { font-size: clamp(2rem, 5vw, 3.5rem); padding-block: 72px 24px; margin: 0 auto; color: var(--accent); }

@@ -10,7 +10,7 @@ for (const s of segments) {
 }
 const shown = cols.slice(0, columns);
 ---
-<section class="times tone-dark-2" id={id}>
+<section class="times grad-band" id={id}>
   <div class="container grid">
     {shown.map((c) => (
       <div class="col reveal">
@@ -24,7 +24,7 @@ const shown = cols.slice(0, columns);
 <style>
   .times { padding-block: clamp(56px, 8vw, 104px); }
   .grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .col h2 { color: var(--accent); margin: 0 0 16px; }
-  .col p { margin: 0 0 6px; color: rgba(255,255,255,.85); }
-  .col p.big { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; color: #fff; margin-bottom: 10px; }
+  .col h2 { color: var(--ink); margin: 0 0 16px; }
+  .col p { margin: 0 0 6px; color: var(--ink); }
+  .col p.big { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; color: var(--ink); margin-bottom: 10px; }
 </style>

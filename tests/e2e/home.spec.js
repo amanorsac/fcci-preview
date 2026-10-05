@@ -16,7 +16,7 @@ test('hero, pillars, latest teaching and service times on /', async ({ page }) =
   const times = page.locator('#service-times');
   await expect(times).toContainText('Sunday- 10:00am');
   await expect(times).toContainText('Wednesday-7:00pm');
-  await expect(page.locator('.hero img').first()).toHaveAttribute('fetchpriority', 'high');
+  await expect(page.locator('.hero .hero-img')).toHaveAttribute('fetchpriority', 'high');
 });
 
 test('announcement link stays on the home page', async ({ page }) => {

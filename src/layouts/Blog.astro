@@ -46,7 +46,7 @@ const article = segs.slice(metaEnd);
 <Base title={page.title} description={page.description} currentPath={isPost ? '/blog' : page.path}>
   {isPost ? (
     <article>
-      <header class="post-head tone-dark">
+      <header class="post-head tone-light-2">
         <div class="container narrow">
           {meta.map((m, i) => <p class:list={['meta', { accent: i === 0 }]}>{m}</p>)}
           <h1 class="display">{segs[0].text}</h1>
@@ -63,7 +63,7 @@ const article = segs.slice(metaEnd);
     </article>
   ) : (
     <>
-      <header class="list-head tone-dark">
+      <header class="list-head tone-light-2">
         <div class="container"><h1 class="display">{listHeading}</h1></div>
       </header>
       <section class="tone-light-2 list">
@@ -94,14 +94,14 @@ const article = segs.slice(metaEnd);
 <style>
   .narrow { max-width: 860px; }
   .post-head { padding-block: clamp(56px, 9vw, 112px) clamp(88px, 12vw, 160px); }
-  .post-head h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); line-height: .98; color: #fff; margin-top: 12px; }
-  .meta { margin: 0; color: rgba(255, 255, 255, .78); font-weight: 600; }
-  .meta.accent { color: var(--accent); letter-spacing: .04em; }
+  .post-head h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); line-height: 1.05; color: var(--ink); margin-top: 12px; }
+  .meta { margin: 0; color: #444; font-weight: 700; }
+  .meta.accent { color: var(--blue); letter-spacing: .04em; }
   .cover-wrap { margin-top: clamp(-120px, -9vw, -64px); }
   .cover-wrap :global(img) { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow); aspect-ratio: 16 / 9; object-fit: cover; }
   .article { padding-block: clamp(40px, 6vw, 72px) clamp(64px, 9vw, 120px); font-size: 1.12rem; }
   .list-head { padding-block: clamp(56px, 9vw, 104px); }
-  .list-head h1 { font-size: clamp(3rem, 8vw, 6rem); color: #fff; }
+  .list-head h1 { font-size: clamp(3rem, 8vw, 6rem); color: var(--ink); }
   .list { padding-block: clamp(48px, 7vw, 88px); }
   .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
   .card { background: var(--paper); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 14px 40px -24px rgba(0, 0, 0, .45); display: flex; flex-direction: column; }
