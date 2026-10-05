@@ -15,7 +15,7 @@ interface Props {
 const { title, description = '', currentPath = '/', sharedFooter = true } = Astro.props;
 const c = site.colors;
 const rgb = (hex: string) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(' ');
-const themeVars = `:root{--accent:${c.accent};--accent-rgb:${rgb(c.accent)};--accent-hover:${c.accentHover};--ink:${c.ink};--ink-2:${c.ink2};--gray:${c.gray};--paper:${c.paper};--paper-2:${c.paper2};--blue:${c.blue};--grad:linear-gradient(135deg, ${c.gradFrom}, ${c.gradTo});}`;
+const themeVars = `:root{--accent:${c.accent};--accent-rgb:${rgb(c.accent)};--accent-hover:${c.accentHover};--ink:${c.ink};--ink-2:${c.ink2};--gray:${c.gray};--paper:${c.paper};--paper-2:${c.paper2};--blue:${c.blue};--grad:linear-gradient(135deg, ${c.gradFrom}, ${c.gradTo});--grad-text:linear-gradient(135deg, ${c.gradTextFrom}, ${c.gradTextTo});}`;
 ---
 <!doctype html>
 <html lang="en">

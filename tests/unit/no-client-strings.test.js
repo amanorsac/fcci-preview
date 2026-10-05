@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
-const FORBIDDEN = ['FCCI', 'Faith Christian', 'Charlottesville', 'fccintl', '#ee7b1a', 'subsplash.com',
+const FORBIDDEN = ['FCCI', 'FAITH KIDZ', 'Sundays @', 'Faith Christian', 'Charlottesville', 'fccintl', '#ee7b1a', 'subsplash.com',
   // the accent as rgb, and hand-darkened shades of it
   '238, 123, 26', '238,123,26', '#b4570d', '#8a4a12', '#d8660f'];
 

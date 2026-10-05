@@ -10,7 +10,7 @@ const d = (k: string) => draft('ministries', k);
 // Names and times are the church's own words (from its pages and menu);
 // the one-line descriptions are draft wording.
 const cards = [
-  { name: 'FAITH KIDZ!', when: 'Sundays @ 10 AM', text: d('kids'), href: '/kidz-amp-youth', slot: 'tile.kids' },
+  { name: site.kids.name, when: site.kids.when, text: d('kids'), href: site.kids.path, slot: 'tile.kids' },
   { name: 'Infusion Youth & G-One Teens', when: 'Wednesdays @ 7PM', text: d('youth'), href: '/students', slot: 'tile.youth' },
   { name: 'College/Young Adult Ministry', when: 'Meets Quarterly', text: d('college'), href: '/kidz-amp-youth', slot: 'next-steps' },
   { name: 'Men', text: d('men'), href: '/men', slot: 'teach' },

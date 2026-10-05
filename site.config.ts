@@ -24,6 +24,9 @@ export const site = {
     // Sampled from the REACH / TEACH / TRANSFORM band on fcci.life.
     gradFrom: '#ee7b1a',
     gradTo: '#fe5cc4',
+    // The same gradient, deepened so headings painted with it reach 3:1 on white and off-white.
+    gradTextFrom: '#c85f0a',
+    gradTextTo: '#d0368f',
   },
 
   // Labels are verbatim from the source nav (src/content/chrome.json).
@@ -82,6 +85,10 @@ export const site = {
   // Children's ministry page: which church lines are age groups, and their photos.
   kids: {
     agePrefix: 'FAITH KIDZ ',
+    // Name, time and page as the church writes them, for the home and Ministries pages.
+    name: 'FAITH KIDZ!',
+    when: 'Sundays @ 10 AM',
+    path: '/kidz-amp-youth',
     ageSlots: ['kids.nursery', 'kids.toddlers', 'kids.preschool', 'kids.church'],
   },
   // Dream Team cards that have a matching photo slot.
