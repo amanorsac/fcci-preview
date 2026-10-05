@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import Blocks from '../components/Blocks.astro';
 import { splitHero, sections } from '../lib/page';
 import { pageImages } from '../lib/images';
+import { pagePair } from '../lib/slots';
 
 const { page } = Astro.props;
 const { heading, eyebrow, body } = splitHero(page.segments);
@@ -14,7 +15,7 @@ const groups = sections(body);
 const photoFor = (i: number) => images[i + 1];
 ---
 <Base title={page.title} description={page.description} currentPath={page.path}>
-  <Hero heading={heading} eyebrow={eyebrow} image={images[0]} size="tall" />
+  <Hero heading={heading} eyebrow={eyebrow} pair={pagePair(page)} size="tall" />
   {groups.map((g, i) => {
     const photo = photoFor(i);
     return (

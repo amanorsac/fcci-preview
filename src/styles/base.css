@@ -109,3 +109,7 @@ h1, h2, h3 { margin: 0; line-height: 1.05; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Church photos / AI images: the visitor's choice is a class on <html>. */
+html:not(.img-ai) [data-variant='ai'],
+html.img-ai [data-variant='church'] { display: none !important; }

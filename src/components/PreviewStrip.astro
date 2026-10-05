@@ -1,32 +1,54 @@
 ---
-interface Props { text: string }
-const { text } = Astro.props;
+interface Props { text: string; churchLabel: string; aiLabel: string }
+const { text, churchLabel, aiLabel } = Astro.props;
 ---
 <div class="preview-strip" data-preview-strip>
   <p>{text}</p>
-  <button type="button" aria-label="Dismiss" data-dismiss>
+  <div class="switch" role="group" aria-label="Images">
+    <button type="button" data-img="church" aria-pressed="true">{churchLabel}</button>
+    <button type="button" data-img="ai" aria-pressed="false">{aiLabel}</button>
+  </div>
+  <button type="button" class="close" aria-label="Dismiss" data-dismiss>
     <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M2 2l10 10M12 2 2 12" stroke="currentColor" stroke-width="2" /></svg>
   </button>
 </div>
 
 <style>
   .preview-strip {
-    display: flex; align-items: center; justify-content: center; gap: 12px;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px;
     padding: 6px 48px; position: relative;
-    background: var(--accent); color: var(--ink);
-    font: 600 .8rem/1.4 var(--font-body); text-align: center;
+    background: var(--ink); color: #fff; font: 700 .8rem/1.4 var(--font-body); text-align: center;
   }
   .preview-strip p { margin: 0; }
-  .preview-strip button {
+  .switch { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .12); }
+  .switch button {
+    border: 0; border-radius: 999px; padding: 5px 12px; cursor: pointer;
+    background: transparent; color: #fff; font: 700 .76rem/1 var(--font-body);
+  }
+  .switch button[aria-pressed='true'] { background: var(--accent); color: var(--ink); }
+  .close {
     position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
     width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: inherit; cursor: pointer;
     display: grid; place-items: center;
   }
-  .preview-strip button:hover { background: rgba(0,0,0,.1); }
+  .close:hover { background: rgba(255, 255, 255, .12); }
 </style>
 
 <script>
   const strip = document.querySelector('[data-preview-strip]');
+  const root = document.documentElement;
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-img]')];
+  const show = (mode: string) => {
+    root.classList.toggle('img-ai', mode === 'ai');
+    for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.img === mode));
+  };
+  show(root.classList.contains('img-ai') ? 'ai' : 'church');
+  for (const b of buttons) {
+    b.addEventListener('click', () => {
+      show(b.dataset.img!);
+      try { sessionStorage.setItem('preview-img', b.dataset.img!); } catch {}
+    });
+  }
   try { if (sessionStorage.getItem('preview-dismissed') === '1') strip?.remove(); } catch {}
   strip?.querySelector('[data-dismiss]')?.addEventListener('click', () => {
     strip.remove();

@@ -7,6 +7,8 @@ import SubsplashEmbed from '../components/SubsplashEmbed.astro';
 import ServiceTimes from '../components/ServiceTimes.astro';
 import { homeModel } from '../lib/home';
 import { pageImages, imageById } from '../lib/images';
+import { slot } from '../lib/slots';
+import ImageSlot from '../components/ImageSlot.astro';
 import { site } from '../../site.config';
 
 const { page } = Astro.props;
@@ -35,7 +37,7 @@ const rest = m.rest.map((sec) => {
 });
 ---
 <Base title={page.title} description={page.description} currentPath={page.path} sharedFooter={!page.chromeMismatch}>
-  <Hero heading={m.heading} eyebrow={m.eyebrow} lead={m.lines} image={heroImage ?? own[0]} size="full">
+  <Hero heading={m.heading} eyebrow={m.eyebrow} lead={m.lines} pair={page.slug === 'home' ? slot('home.hero') : { church: heroImage ?? own[0], aiAlt: '' }} size="full">
     {m.announcements.map((a, i) => (
       <a class="announce" href={a.href} {...(external(a.href!) ? { rel: 'noopener', target: '_blank' } : {})}>
         {i === 0 && own[0] && heroImage && (
@@ -55,11 +57,14 @@ const rest = m.rest.map((sec) => {
     <section class="pillars tone-dark">
       {m.intro.map((t) => <p class="intro container display">{t}</p>)}
       {m.pillars.map((p, i) => {
-        const img = panelImages.length ? panelImages[i % panelImages.length] : undefined;
+        const ids = ['home.reach', 'home.teach', 'home.transform'];
+        const church = panelImages.length ? panelImages[i % panelImages.length] : undefined;
+        const pair = page.slug === 'home' && ids[i] ? slot(ids[i]) : { church, aiAlt: '' };
+        const img = pair.church || pair.ai;
         return (
           <article class:list={['pillar', { flip: i % 2 === 1 }]} data-pillar>
             {img && (
-              <Picture src={img} alt="" formats={['avif', 'webp']} widths={[640, 1280, 2000]} sizes="100vw" class="pillar-img" loading="lazy" />
+              <ImageSlot pair={pair} sizes="100vw" widths={[640, 1280, 2000]} class="pillar-img" />
             )}
             <div class="pillar-scrim" aria-hidden="true"></div>
             <div class="container pillar-inner reveal">

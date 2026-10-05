@@ -1,0 +1,25 @@
+---
+// Shows a church photo and/or an AI image for one slot. When both exist, the
+// visitor's choice (class "img-ai" on <html>) decides which one is visible;
+// when only one exists it shows in both modes.
+import { Picture } from 'astro:assets';
+import type { Pair } from '../lib/slots';
+
+interface Props {
+  pair: Pair;
+  sizes: string;
+  widths?: number[];
+  eager?: boolean;
+  class?: string;
+  alt?: string;
+}
+const { pair, sizes, widths = [480, 800, 1200, 1600], eager = false, alt = '', class: cls } = Astro.props;
+const both = !!(pair.church && pair.ai);
+const common = { formats: ['avif', 'webp'], widths, sizes, loading: eager ? 'eager' : 'lazy', class: cls } as const;
+---
+{pair.church && (
+  <Picture src={pair.church} alt={alt} {...common} fetchpriority={eager ? 'high' : 'auto'} pictureAttributes={both ? { 'data-variant': 'church' } : {}} />
+)}
+{pair.ai && (
+  <Picture src={pair.ai} alt={alt ? pair.aiAlt : ''} {...common} fallbackFormat="webp" loading="lazy" pictureAttributes={both ? { 'data-variant': 'ai' } : {}} />
+)}

@@ -1,16 +1,17 @@
 ---
-import { Picture } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import ImageSlot from './ImageSlot.astro';
+import { hasImage, type Pair } from '../lib/slots';
 
 interface Props {
   heading: string;
   eyebrow?: string[];
   lead?: string[];
-  image?: ImageMetadata;
+  pair?: Pair;
   size?: 'compact' | 'tall' | 'full';
   priority?: boolean;
 }
-const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = true } = Astro.props;
+const { heading, eyebrow = [], lead = [], pair, size = 'compact', priority = true } = Astro.props;
+const image = pair && hasImage(pair);
 ---
 <section class:list={['hero', 'tone-light-2', `hero-${size}`, { 'has-img': image }]}>
   <div class="glow" aria-hidden="true"></div>
@@ -23,16 +24,7 @@ const { heading, eyebrow = [], lead = [], image, size = 'compact', priority = tr
     </div>
     {image && (
       <div class="hero-media">
-        <Picture
-          src={image}
-          alt=""
-          formats={['avif', 'webp']}
-          widths={[480, 800, 1200, 1600]}
-          sizes="(min-width: 960px) 46vw, 100vw"
-          class="hero-img"
-          loading={priority ? 'eager' : 'lazy'}
-          fetchpriority={priority ? 'high' : 'auto'}
-        />
+        <ImageSlot pair={pair!} sizes="(min-width: 960px) 46vw, 100vw" class="hero-img" eager={priority} />
       </div>
     )}
   </div>

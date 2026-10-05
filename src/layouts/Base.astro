@@ -30,10 +30,11 @@ const themeVars = `:root{--accent:${c.accent};--accent-rgb:${rgb(c.accent)};--ac
     <link rel="preload" href="/fonts/abril-fatface-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <style set:html={themeVars}></style>
+    <script is:inline>try{if(sessionStorage.getItem('preview-img')==='ai')document.documentElement.classList.add('img-ai')}catch(e){}</script>
   </head>
   <body>
     <a class="skip-link" href="#main">{site.ui.skipLink}</a>
-    {site.preview.enabled && <PreviewStrip text={site.preview.text} />}
+    {site.preview.enabled && <PreviewStrip text={site.preview.text} churchLabel={site.preview.churchPhotos} aiLabel={site.preview.aiImages} />}
     <Header nav={site.nav} ctas={site.headerCtas} logo={site.logo} name={site.name} currentPath={currentPath} />
     <main id="main" tabindex="-1">
       <slot />
