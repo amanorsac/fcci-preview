@@ -1,0 +1,17 @@
+{
+  "page": "/ (home)",
+  "items": [
+    { "key": "tailor.eyebrow", "text": "Start here" },
+    { "key": "tailor.title", "text": "Find your place." },
+    { "key": "tile.new", "text": "First time with us? Here's what to expect." },
+    { "key": "tile.kids", "text": "Birth through 5th grade, every Sunday." },
+    { "key": "tile.youth", "text": "Tweens and teens, every Wednesday." },
+    { "key": "tile.groups", "text": "Do life together in a small group." },
+    { "key": "kids.text", "text": "Our kids learn about Jesus in a safe, fun place made just for them, with classes for every age from birth through 5th grade." },
+    { "key": "kids.cta", "text": "Explore FAITH KIDZ" },
+    { "key": "events.eyebrow", "text": "Events" },
+    { "key": "events.title", "text": "What's happening at FCCI" },
+    { "key": "dream.text", "text": "Every Sunday is made possible by people who use their gifts to serve. There's a place for you on the team." },
+    { "key": "next.title", "text": "Take your next step" }
+  ]
+}

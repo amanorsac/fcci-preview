@@ -40,6 +40,23 @@ edit or remove each line. To change one, edit the matching file in
 | `dream-team.join.3` | A team leader will reach out to get you started. |
 | `dream-team.form.title` | Join the Dream Team |
 
+## / (home)
+
+| Where | Draft text |
+|---|---|
+| `home.tailor.eyebrow` | Start here |
+| `home.tailor.title` | Find your place. |
+| `home.tile.new` | First time with us? Here's what to expect. |
+| `home.tile.kids` | Birth through 5th grade, every Sunday. |
+| `home.tile.youth` | Tweens and teens, every Wednesday. |
+| `home.tile.groups` | Do life together in a small group. |
+| `home.kids.text` | Our kids learn about Jesus in a safe, fun place made just for them, with classes for every age from birth through 5th grade. |
+| `home.kids.cta` | Explore FAITH KIDZ |
+| `home.events.eyebrow` | Events |
+| `home.events.title` | What's happening at FCCI |
+| `home.dream.text` | Every Sunday is made possible by people who use their gifts to serve. There's a place for you on the team. |
+| `home.next.title` | Take your next step |
+
 ## /ministries
 
 | Where | Draft text |

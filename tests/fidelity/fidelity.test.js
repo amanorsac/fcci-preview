@@ -37,6 +37,9 @@ const PERMITTED_COLLAPSE = {
 const SMS = /(text ([A-Z0-9]{3,}) to ((?:1-)?\d{3}-\d{3}-\d{4}))/;
 const builtFile = (path) => join('dist', path === '/' ? '' : path, 'index.html');
 const pages = readdirSync('src/content/pages').map((f) => JSON.parse(readFileSync(join('src/content/pages', f), 'utf8')));
+// v2 reuses church wording across pages (e.g. "FAITH KIDZ!" on the home page),
+// so text from any church page is allowed; it is still never new wording.
+const CHURCH_CORPUS = pages.flatMap((p) => sourceLines(readFileSync(join('source/pages', `${p.slug}.md`), 'utf8')));
 
 /** How many times `line` appears as one text node or as 2-6 adjacent nodes
  *  (split buttons, tap-to-text links, dropdown options captured as one line). */
@@ -91,7 +94,7 @@ describe('wording fidelity on every page', () => {
         .filter((x) => x.type === 'select' && src.includes(normalize((x.options ?? []).join(''))))
         .flatMap((x) => x.options.map(normalize));
       const allowed = new Set([
-        ...src, ...optionPieces,
+        ...src, ...CHURCH_CORPUS, ...optionPieces,
         // A page with its own footer must not also show the shared footer.
         ...(page.chromeMismatch
           ? SHARED_CHROME_TEXT.filter((t) => !chrome.footer.some((s) => s.text === t))
